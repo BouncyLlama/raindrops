@@ -7,5 +7,6 @@ require (
 	github.com/akamensky/argparse v0.0.0-20191006154803-1427fe674291
 	github.com/influxdata/influxdb-client-go v0.1.3
 	github.com/influxdata/influxdb1-client v0.0.0-20190809212627-fc22c7df067e
+	github.com/stretchr/testify v1.3.0
 	golang.org/x/net v0.0.0-20191002035440-2ec189313ef0 // indirect
 )
