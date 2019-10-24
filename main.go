@@ -18,6 +18,19 @@ type config struct {
 	platform string
 	influxDb string
 }
+type HttpClient struct {
+	Client  *http.Client
+	baseUrl string
+}
+type ServiceStatus struct {
+	Platform string
+	Service  string
+	Status   string
+}
+type Reporters struct {
+	influx client.Client
+	bpc    client.BatchPointsConfig
+}
 
 const up = "up"
 const down = "down"
@@ -25,8 +38,6 @@ const all = "all"
 const google = "google"
 const amazon = "amazon"
 const azure = "azure"
-
-var influx client.Client
 
 func main() {
 	parser := argparse.NewParser("monitor", "monitors cloud host status")
@@ -51,9 +62,13 @@ func main() {
 	conf.report = *report
 	conf.platform = *platform
 	conf.influxDb = *influxdDB
+	reporters := Reporters{}
 	if influxUrl != nil && *influxUrl != "" {
 
-		influx, err = client.NewHTTPClient(client.HTTPConfig{Addr: *influxUrl, Username: *influxUser, Password: *influxPass})
+		influx, _ := client.NewHTTPClient(client.HTTPConfig{Addr: *influxUrl, Username: *influxUser, Password: *influxPass})
+		reporters.influx = influx
+		bpc := client.BatchPointsConfig{Database: conf.influxDb}
+		reporters.bpc = bpc
 		defer influx.Close()
 	}
 	if err != nil {
@@ -61,44 +76,64 @@ func main() {
 	}
 
 	if conf.platform == azure || conf.platform == all {
-		Azure(conf)
+		httpClient := HttpClient{
+			Client:  &http.Client{},
+			baseUrl: "https://status.azure.com/en-us/status",
+		}
+		HandleResult(Azure(conf, httpClient), reporters)
 	}
 	if conf.platform == google || conf.platform == all {
-		Google(conf)
+		httpClient := HttpClient{
+			Client:  &http.Client{},
+			baseUrl: "https://status.cloud.google.com",
+		}
+		HandleResult(Google(conf, httpClient), reporters)
 	}
 	if conf.platform == amazon || conf.platform == all {
-		Amazon(conf)
+		httpClient := HttpClient{
+			Client:  &http.Client{},
+			baseUrl: "https://status.aws.amazon.com",
+		}
+		HandleResult(Amazon(conf, httpClient), reporters)
 	}
 }
 
-func logProblem(conf config, platform string, service string, status string) {
-	fmt.Println(platform + " " + service + " " + status)
-	if conf.influxDb != "" {
-		bpc := client.BatchPointsConfig{Database: conf.influxDb}
-		bp, _ := client.NewBatchPoints(bpc)
+func HandleResult(result []ServiceStatus, reporters Reporters) {
+	for _, item := range result {
+		if item.Status != "OK" {
+			logProblem(item, reporters)
+		} else {
+			logOk(item, reporters)
+		}
+	}
+}
+
+func logProblem(result ServiceStatus, reporters Reporters) {
+	fmt.Println(result.Platform + " " + result.Service + " " + result.Status)
+	if reporters.influx != nil {
+		bp, _ := client.NewBatchPoints(reporters.bpc)
 		var data map[string]interface{}
-		data = map[string]interface{}{"status": status}
-		point, _ := client.NewPoint("platforms", map[string]string{"platform": platform, "service": service}, data, time.Now())
+		data = map[string]interface{}{"status": result.Status}
+		point, _ := client.NewPoint("platforms", map[string]string{"platform": result.Platform, "service": result.Service}, data, time.Now())
 		bp.AddPoint(point)
-		influx.Write(bp)
+		reporters.influx.Write(bp)
 	}
 
 }
-func logOk(conf config, platform string, service string) {
-	fmt.Println(platform + " " + service + " is fine")
-	if conf.influxDb != "" {
+func logOk(result ServiceStatus, reporters Reporters) {
+	fmt.Println(result.Platform + " " + result.Service + " is fine")
+	if reporters.influx != nil {
 
-		bpc := client.BatchPointsConfig{Database: conf.influxDb}
-		bp, _ := client.NewBatchPoints(bpc)
+		bp, _ := client.NewBatchPoints(reporters.bpc)
 		var data map[string]interface{}
 		data = map[string]interface{}{"status": "OK"}
-		point, _ := client.NewPoint("platforms", map[string]string{"platform": platform, "service": service}, data, time.Now())
+		point, _ := client.NewPoint("platforms", map[string]string{"platform": result.Platform, "service": result.Service}, data, time.Now())
 		bp.AddPoint(point)
-		influx.Write(bp)
+		reporters.influx.Write(bp)
 	}
 }
-func Google(conf config) {
-	res, err := http.Get("https://status.cloud.google.com")
+func Google(conf config, client HttpClient) []ServiceStatus {
+	res, err := client.Client.Get(client.baseUrl)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -113,7 +148,7 @@ func Google(conf config) {
 		log.Fatal(err)
 	}
 	rows := doc.Find("table:nth-child(1) tr")
-
+	serviceStatus := []ServiceStatus{}
 	rows.Each(
 		func(i int, s *goquery.Selection) {
 
@@ -141,17 +176,25 @@ func Google(conf config) {
 				return
 			}
 			if !strings.Contains(status, "Ok") && conf.report != up {
-				logProblem(conf, google, text, status)
+				serviceStatus = append(serviceStatus, ServiceStatus{
+					Platform: google,
+					Service:  text,
+					Status:   status,
+				})
 			}
 			if strings.Contains(status, "Ok") && conf.report != down {
-				logOk(conf, google, text)
+				serviceStatus = append(serviceStatus, ServiceStatus{
+					Platform: google,
+					Service:  text,
+					Status:   "OK",
+				})
 			}
 
 		})
-
+	return serviceStatus
 }
-func Amazon(conf config) {
-	res, err := http.Get("https://status.aws.amazon.com")
+func Amazon(conf config, client HttpClient) []ServiceStatus {
+	res, err := client.Client.Get(client.baseUrl)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -166,7 +209,7 @@ func Amazon(conf config) {
 		log.Fatal(err)
 	}
 	rows := doc.Find("div#NA_block table:nth-child(2) tr")
-
+	serviceStatus := []ServiceStatus{}
 	rows.Each(
 		func(i int, s *goquery.Selection) {
 
@@ -179,17 +222,25 @@ func Amazon(conf config) {
 				return
 			}
 			if !strings.Contains(status, "operating normally") && conf.report != up {
-				logProblem(conf, amazon, text, status)
+				serviceStatus = append(serviceStatus, ServiceStatus{
+					Platform: amazon,
+					Service:  text,
+					Status:   status,
+				})
 			}
 			if strings.Contains(status, "operating normally") && conf.report != down {
-				logOk(conf, amazon, text)
+				serviceStatus = append(serviceStatus, ServiceStatus{
+					Platform: amazon,
+					Service:  text,
+					Status:   "OK",
+				})
 			}
 
 		})
-
+	return serviceStatus
 }
-func Azure(conf config) {
-	res, err := http.Get("https://status.azure.com/en-us/status")
+func Azure(conf config, client HttpClient) []ServiceStatus {
+	res, err := client.Client.Get(client.baseUrl)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -204,7 +255,7 @@ func Azure(conf config) {
 		log.Fatal(err)
 	}
 	rows := doc.Find("table[data-zone-name=americas].region-status-table tr ").Not(".status-category")
-
+	serviceStatus := []ServiceStatus{}
 	rows.Find("td:first-child ").Each(
 		func(i int, s *goquery.Selection) {
 			text := s.Text()
@@ -220,10 +271,19 @@ func Azure(conf config) {
 			}
 			text = strings.TrimSpace(text)
 			if status != "Good" && conf.report != up {
-				logProblem(conf, azure, text, status)
+				serviceStatus = append(serviceStatus, ServiceStatus{
+					Platform: azure,
+					Service:  text,
+					Status:   status,
+				})
 			}
 			if status == "Good" && conf.report != down {
-				logOk(conf, azure, text)
+				serviceStatus = append(serviceStatus, ServiceStatus{
+					Platform: azure,
+					Service:  text,
+					Status:   "OK",
+				})
 			}
 		})
+	return serviceStatus
 }
