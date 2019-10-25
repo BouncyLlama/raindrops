@@ -48,7 +48,7 @@ func main() {
 	influxUrl := influxCommand.String("i", "influx-url", &argparse.Options{Required: true, Help: "The url to influxdb"})
 	influxUser := influxCommand.String("u", "username", &argparse.Options{Required: true, Help: "influxdb username"})
 	influxPass := influxCommand.String("p", "pasword", &argparse.Options{Required: true, Help: "influxdb password"})
-	influxdDB := influxCommand.String("d", "influxdb", &argparse.Options{Required: true, Help: "db name to use"})
+	influxDB := influxCommand.String("d", "influxdb", &argparse.Options{Required: true, Help: "db name to use"})
 
 	// Parse input
 	err := parser.Parse(os.Args)
@@ -61,7 +61,7 @@ func main() {
 	conf := config{}
 	conf.report = *report
 	conf.platform = *platform
-	conf.influxDb = *influxdDB
+	conf.influxDb = *influxDB
 	reporters := Reporters{}
 	if influxUrl != nil && *influxUrl != "" {
 
@@ -113,8 +113,16 @@ func logProblem(result ServiceStatus, reporters Reporters) {
 	if reporters.influx != nil {
 		bp, _ := client.NewBatchPoints(reporters.bpc)
 		var data map[string]interface{}
-		data = map[string]interface{}{"status": result.Status}
-		point, _ := client.NewPoint("platforms", map[string]string{"platform": result.Platform, "service": result.Service}, data, time.Now())
+		status := -1
+		if result.Status == "Degraded" {
+			status = 2
+		} else if result.Status == "Down" {
+			status = 3
+		} else if result.Status == "Info" {
+			status = 1
+		}
+		data = map[string]interface{}{"status": status}
+		point, _ := client.NewPoint("platforms", map[string]string{"platform": result.Platform, "service": result.Service, "status-label": result.Status}, data, time.Now())
 		bp.AddPoint(point)
 		reporters.influx.Write(bp)
 	}
@@ -126,8 +134,8 @@ func logOk(result ServiceStatus, reporters Reporters) {
 
 		bp, _ := client.NewBatchPoints(reporters.bpc)
 		var data map[string]interface{}
-		data = map[string]interface{}{"status": "OK"}
-		point, _ := client.NewPoint("platforms", map[string]string{"platform": result.Platform, "service": result.Service}, data, time.Now())
+		data = map[string]interface{}{"status": 0}
+		point, _ := client.NewPoint("platforms", map[string]string{"platform": result.Platform, "service": result.Service, "status-label": result.Status}, data, time.Now())
 		bp.AddPoint(point)
 		reporters.influx.Write(bp)
 	}
@@ -163,30 +171,30 @@ func Google(conf config, client HttpClient) []ServiceStatus {
 			highResult := statusNode.Find(".timeline-incident.high")
 			mediumResult := statusNode.Find(".timeline-incident.medium")
 
-			status := "Ok"
+			status := "OK"
 			if highResult != nil && len(highResult.Nodes) != 0 {
 				status = "Down"
 			} else if mediumResult != nil && len(mediumResult.Nodes) != 0 {
-				status = "Disrupted"
+				status = "Degraded"
 			} else if okResult != nil && len(okResult.Nodes) != 0 {
-				status = "Ok"
+				status = "OK"
 			}
 			text = strings.TrimSpace(text)
 			if text == "" || status == "" {
 				return
 			}
-			if !strings.Contains(status, "Ok") && conf.report != up {
+			if !strings.Contains(status, "OK") && conf.report != up {
 				serviceStatus = append(serviceStatus, ServiceStatus{
 					Platform: google,
 					Service:  text,
 					Status:   status,
 				})
 			}
-			if strings.Contains(status, "Ok") && conf.report != down {
+			if strings.Contains(status, "OK") && conf.report != down {
 				serviceStatus = append(serviceStatus, ServiceStatus{
 					Platform: google,
 					Service:  text,
-					Status:   "OK",
+					Status:   status,
 				})
 			}
 
@@ -221,18 +229,27 @@ func Amazon(conf config, client HttpClient) []ServiceStatus {
 			if text == "" || status == "" {
 				return
 			}
-			if !strings.Contains(status, "operating normally") && conf.report != up {
+			if status == "Service is operating normally" {
+				status = "OK"
+			} else if status == "Service degradation" {
+				status = "Degraded"
+			} else if status == "Service disruption" {
+				status = "Down"
+			} else {
+				status = "Info"
+			}
+			if status != "OK" && conf.report != up {
 				serviceStatus = append(serviceStatus, ServiceStatus{
 					Platform: amazon,
 					Service:  text,
 					Status:   status,
 				})
 			}
-			if strings.Contains(status, "operating normally") && conf.report != down {
+			if status == "OK" && conf.report != down {
 				serviceStatus = append(serviceStatus, ServiceStatus{
 					Platform: amazon,
 					Service:  text,
-					Status:   "OK",
+					Status:   status,
 				})
 			}
 
@@ -270,18 +287,28 @@ func Azure(conf config, client HttpClient) []ServiceStatus {
 				return
 			}
 			text = strings.TrimSpace(text)
-			if status != "Good" && conf.report != up {
+			if status == "Good" {
+				status = "OK"
+			} else if status == "Warning" {
+				status = "Degraded"
+			} else if status == "Critical" {
+				status = "Down"
+			} else {
+				status = "Info"
+			}
+
+			if status != "OK" && conf.report != up {
 				serviceStatus = append(serviceStatus, ServiceStatus{
 					Platform: azure,
 					Service:  text,
 					Status:   status,
 				})
 			}
-			if status == "Good" && conf.report != down {
+			if status == "OK" && conf.report != down {
 				serviceStatus = append(serviceStatus, ServiceStatus{
 					Platform: azure,
 					Service:  text,
-					Status:   "OK",
+					Status:   status,
 				})
 			}
 		})

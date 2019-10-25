@@ -70,7 +70,7 @@ func TestUnHealthyAmazon(t *testing.T) {
 		assert.Fail(t, "Should have returned results")
 	}
 	assert.Equal(t, 555, len(status), "Should have 33 records")
-	assert.Equal(t, "Oh no it broke", status[0].Status, "Expected service to be down")
+	assert.Equal(t, "Down", status[0].Status, "Expected service to be down")
 	status = append(status[:0], status[0+1:]...)
 	for idx, item := range status {
 		assert.Equal(t, "OK", item.Status, `index `+strconv.Itoa(idx)+` had status `+item.Status)
