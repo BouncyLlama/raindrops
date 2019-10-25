@@ -282,7 +282,8 @@ func Azure(conf config, client HttpClient) []ServiceStatus {
 			for strings.Contains(text, "  ") {
 				text = strings.ReplaceAll(text, "  ", " ")
 			}
-			status := strings.TrimSpace(s.Parent().Find("td:nth-child(2)").Text())
+			//only east us for now
+			status := strings.TrimSpace(s.Parent().Find("td:nth-child(3)").Text())
 			if status == "" || status == "Blank" {
 				return
 			}
