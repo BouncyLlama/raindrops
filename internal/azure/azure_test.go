@@ -1,7 +1,9 @@
-package main
+package azure
 
 import (
 	"bytes"
+	"github.com/BouncyLlama/raindrops/internal/test"
+	. "github.com/BouncyLlama/raindrops/internal/types"
 	"github.com/stretchr/testify/assert"
 	"io/ioutil"
 	"net/http"
@@ -11,10 +13,10 @@ import (
 
 // RoundTripFunc .
 
-func TestHealthyAmazon(t *testing.T) {
+func TestHealthyAzure(t *testing.T) {
 
-	dat, _ := ioutil.ReadFile("./testdata/amazon_today_good.html")
-	client := NewTestClient(func(req *http.Request) *http.Response {
+	dat, _ := ioutil.ReadFile("../testdata/azure_today_good.html")
+	client := test.NewTestClient(func(req *http.Request) *http.Response {
 		// Test request parameters
 		return &http.Response{
 			StatusCode: 200,
@@ -26,28 +28,28 @@ func TestHealthyAmazon(t *testing.T) {
 	})
 
 	api := HttpClient{client, "http://example.com"}
-	conf := config{
-		report:   "all",
-		platform: "amazon",
-		influxDb: "",
+	conf := Config{
+		Report:   "all",
+		Platform: "azure",
+		InfluxDb: "",
 	}
 
-	status := Amazon(conf, api)
+	status := ScrapeStatus(conf, api)
 	if status == nil || len(status) == 0 {
 		assert.Fail(t, "Should have returned results")
 	}
-	assert.Equal(t, 555, len(status), "Should have 33 records")
+	assert.Equal(t, 103, len(status), "Should have 103 records")
 	for idx, item := range status {
 		assert.Equal(t, "OK", item.Status, `index `+string(idx)+` had status `+item.Status)
-		assert.Equal(t, "amazon", item.Platform, `index `+string(idx)+` had platform `+item.Platform)
+		assert.Equal(t, "azure", item.Platform, `index `+string(idx)+` had platform `+item.Platform)
 
 	}
 
 }
-func TestUnHealthyAmazon(t *testing.T) {
+func TestUnHealthyAzure(t *testing.T) {
 
-	dat, _ := ioutil.ReadFile("./testdata/amazon_today_bad.html")
-	client := NewTestClient(func(req *http.Request) *http.Response {
+	dat, _ := ioutil.ReadFile("../testdata/azure_today_bad.html")
+	client := test.NewTestClient(func(req *http.Request) *http.Response {
 		// Test request parameters
 		return &http.Response{
 			StatusCode: 200,
@@ -59,22 +61,22 @@ func TestUnHealthyAmazon(t *testing.T) {
 	})
 
 	api := HttpClient{client, "http://example.com"}
-	conf := config{
-		report:   "all",
-		platform: "amazon",
-		influxDb: "",
+	conf := Config{
+		Report:   "all",
+		Platform: "azure",
+		InfluxDb: "",
 	}
 
-	status := Amazon(conf, api)
+	status := ScrapeStatus(conf, api)
 	if status == nil || len(status) == 0 {
 		assert.Fail(t, "Should have returned results")
 	}
-	assert.Equal(t, 555, len(status), "Should have 33 records")
+	assert.Equal(t, 103, len(status), "Should have 103 records")
 	assert.Equal(t, "Down", status[0].Status, "Expected service to be down")
 	status = append(status[:0], status[0+1:]...)
 	for idx, item := range status {
 		assert.Equal(t, "OK", item.Status, `index `+strconv.Itoa(idx)+` had status `+item.Status)
-		assert.Equal(t, "amazon", item.Platform, `index `+strconv.Itoa(idx)+` had platform `+item.Platform)
+		assert.Equal(t, "azure", item.Platform, `index `+strconv.Itoa(idx)+` had platform `+item.Platform)
 
 	}
 

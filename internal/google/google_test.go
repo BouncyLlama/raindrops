@@ -1,7 +1,9 @@
-package main
+package google
 
 import (
 	"bytes"
+	"github.com/BouncyLlama/raindrops/internal/test"
+	. "github.com/BouncyLlama/raindrops/internal/types"
 	"github.com/stretchr/testify/assert"
 	"io/ioutil"
 	"net/http"
@@ -9,25 +11,10 @@ import (
 	"testing"
 )
 
-// RoundTripFunc .
-type RoundTripFunc func(req *http.Request) *http.Response
-
-// RoundTrip .
-func (f RoundTripFunc) RoundTrip(req *http.Request) (*http.Response, error) {
-	return f(req), nil
-}
-
-//NewTestClient returns *http.Client with Transport replaced to avoid making real calls
-func NewTestClient(fn RoundTripFunc) *http.Client {
-	return &http.Client{
-		Transport: RoundTripFunc(fn),
-	}
-}
-
 func TestHealthy(t *testing.T) {
 
-	dat, _ := ioutil.ReadFile("./testdata/google_today_good.html")
-	client := NewTestClient(func(req *http.Request) *http.Response {
+	dat, _ := ioutil.ReadFile("../testdata/google_today_good.html")
+	client := test.NewTestClient(func(req *http.Request) *http.Response {
 		// Test request parameters
 		return &http.Response{
 			StatusCode: 200,
@@ -39,13 +26,13 @@ func TestHealthy(t *testing.T) {
 	})
 
 	api := HttpClient{client, "http://example.com"}
-	conf := config{
-		report:   "all",
-		platform: "google",
-		influxDb: "",
+	conf := Config{
+		Report:   "all",
+		Platform: "google",
+		InfluxDb: "",
 	}
 
-	status := Google(conf, api)
+	status := ScrapeStatus(conf, api)
 	if status == nil || len(status) == 0 {
 		assert.Fail(t, "Should have returned results")
 	}
@@ -59,8 +46,8 @@ func TestHealthy(t *testing.T) {
 }
 func TestUnHealthy(t *testing.T) {
 
-	dat, _ := ioutil.ReadFile("./testdata/google_today_bad.html")
-	client := NewTestClient(func(req *http.Request) *http.Response {
+	dat, _ := ioutil.ReadFile("../testdata/google_today_bad.html")
+	client := test.NewTestClient(func(req *http.Request) *http.Response {
 		// Test request parameters
 		return &http.Response{
 			StatusCode: 200,
@@ -72,13 +59,13 @@ func TestUnHealthy(t *testing.T) {
 	})
 
 	api := HttpClient{client, "http://example.com"}
-	conf := config{
-		report:   "all",
-		platform: "google",
-		influxDb: "",
+	conf := Config{
+		Report:   "all",
+		Platform: "google",
+		InfluxDb: "",
 	}
 
-	status := Google(conf, api)
+	status := ScrapeStatus(conf, api)
 	if status == nil || len(status) == 0 {
 		assert.Fail(t, "Should have returned results")
 	}
