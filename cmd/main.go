@@ -115,6 +115,14 @@ func main() {
 			incidents = append(incidents, amazon.ScrapeIncidents(conf, httpClient)...)
 
 		}
+		if conf.Platform == types.Azure || conf.Platform == types.All {
+			httpClient := types.HttpClient{
+				Client:  &http.Client{},
+				BaseUrl: "https://status.azure.com/en-us/status/history/",
+			}
+			incidents = append(incidents, azure.ScrapeIncidents(conf, httpClient)...)
+
+		}
 		for _, item := range incidents {
 			logIncident(item, reporters)
 		}

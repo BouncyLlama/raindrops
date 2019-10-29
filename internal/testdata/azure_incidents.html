@@ -1,0 +1,1337 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Azure status history | Microsoft Azure</title>
+    <meta name="description" content="Check the status history of Microsoft Azure services here." />
+    <meta name="IsUsingStatusV2" />
+    <meta name="RegionalSiteName" />
+    <link href="https://c.s-microsoft.com/favicon.ico?v2" rel="SHORTCUT ICON" type="image/x-icon">
+    <script src="/Scripts/jquery-3.3.1.min.js"></script>
+    <link href="/Style/corev3.css?v=1.1.11.46" rel="stylesheet" type="text/css"></link>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138972891-1"></script>
+    <script async src="/scripts/tracking.js"></script>
+</head>
+<body id="top">
+<div class="header-container">
+
+
+    <header id="azure-header" class="azure-header">
+        <a href="#main" class="skip-nav" title="Skip Navigation">Skip Navigation</a>
+        <nav class="nav-basic" aria-label="Utility navigation">
+            <form id="nav-search-form" onsubmit="event.stopPropagation();" action="https://azure.microsoft.com/search/" method="get" role="search">
+                <div class="logo-container">
+                    <a href="https://azure.microsoft.com/" title="Microsoft Azure" aria-label="Microsoft Azure" data-event="global-navigation-header-clicked-msazurelogo">
+                        <svg style="display:none; visibility:hidden;">
+                            <defs><symbol id="svg-msazure-logo" viewBox="0 0 506 72">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.244 8.014L13.857 26.209H26.811L20.455 8.014H20.244ZM24.702 0L40.97 43.201H32.716L28.89 32.476H11.869L8.194 43.201H0L16.267 0H24.702Z" transform="translate(350.999 14.3985)" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.145 0H25.878V2.923L9.64 25.186H25.968V30.97H0V27.505L15.997 5.784H1.145V0Z" transform="translate(394.539 26.6293)" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M27.806 0V30.97H20.455V26.902H20.335C19.371 28.309 18.08 29.408 16.464 30.201C14.847 30.994 13.035 31.392 11.027 31.392C7.431 31.392 4.695 30.372 2.817 28.333C0.939 26.295 0 23.127 0 18.829V0H7.381V17.955C7.381 20.566 7.898 22.529 8.933 23.845C9.967 25.16 11.528 25.818 13.618 25.818C15.686 25.818 17.342 25.09 18.588 23.634C19.833 22.178 20.455 20.274 20.455 17.925V0H27.806Z" transform="translate(424.786 26.6293)" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.274 0C15.856 0 16.378 0.04 16.84 0.12C17.302 0.201 17.694 0.301 18.015 0.422V7.803C17.633 7.521 17.076 7.256 16.343 7.004C15.61 6.753 14.721 6.628 13.677 6.628C11.889 6.628 10.378 7.381 9.143 8.887C7.908 10.394 7.291 12.713 7.291 15.846V31.481H0V0.512H7.291V5.393H7.411C8.074 3.705 9.078 2.385 10.423 1.431C11.769 0.478 13.385 0 15.274 0Z" transform="translate(458.27 26.1176)" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.238 12.983C21.238 10.573 20.68 8.736 19.566 7.47C18.451 6.205 16.88 5.573 14.851 5.573C13.104 5.573 11.538 6.201 10.152 7.456C8.76601 8.711 7.84201 10.553 7.38101 12.983H21.238ZM25.908 23.798V29.794C24.703 30.557 23.126 31.174 21.177 31.646C19.229 32.118 17.151 32.354 14.942 32.354C10.221 32.354 6.551 30.959 3.93 28.167C1.31 25.376 0 21.489 0 16.508C0 11.709 1.4 7.756 4.202 4.654C7.004 1.55 10.553 0 14.851 0C19.13 0 22.458 1.309 24.838 3.93C27.217 6.551 28.408 10.171 28.408 14.791V18.316H7.2C7.52 21.429 8.52 23.602 10.197 24.837C11.874 26.073 14.038 26.69 16.689 26.69C18.436 26.69 20.103 26.424 21.69 25.892C23.276 25.36 24.682 24.662 25.908 23.798Z" transform="translate(476.741 25.9979)" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M229.35 21.39H218.492V46.394H211.112V21.39H205.93V15.425H211.112V11.117C211.112 7.863 212.17 5.197 214.29 3.119C216.408 1.039 219.124 0 222.438 0C223.322 0 224.105 0.045 224.788 0.136C225.471 0.227 226.074 0.362 226.596 0.542V6.839C226.354 6.699 225.933 6.528 225.33 6.327C224.728 6.126 224.035 6.026 223.252 6.026C221.725 6.026 220.551 6.502 219.727 7.456C218.903 8.411 218.492 9.822 218.492 11.689V15.425H229.35V8.465L236.67 6.237V15.425H244.052V21.39H236.67V35.879C236.67 37.788 237.017 39.134 237.71 39.916C238.403 40.7 239.492 41.091 240.978 41.091C241.4 41.091 241.907 40.992 242.5 40.79C243.092 40.59 243.609 40.349 244.052 40.068V46.092C243.589 46.354 242.821 46.594 241.746 46.816C240.672 47.036 239.613 47.147 238.568 47.147C235.495 47.147 233.191 46.329 231.655 44.692C230.118 43.055 229.35 40.59 229.35 37.295V21.39ZM180.943 31.12C180.943 34.354 181.676 36.824 183.142 38.532C184.607 40.239 186.706 41.091 189.438 41.091C192.089 41.091 194.108 40.239 195.493 38.532C196.879 36.824 197.572 34.293 197.572 30.939C197.572 27.606 196.854 25.09 195.418 23.393C193.982 21.696 191.968 20.848 189.378 20.848C186.706 20.848 184.633 21.736 183.157 23.514C181.68 25.29 180.943 27.827 180.943 31.12ZM173.351 31.361C173.351 26.24 174.797 22.183 177.689 19.19C180.581 16.198 184.598 14.702 189.739 14.702C194.579 14.702 198.36 16.143 201.082 19.025C203.803 21.908 205.163 25.798 205.163 30.699C205.163 35.72 203.717 39.716 200.826 42.688C197.933 45.661 193.997 47.147 189.016 47.147C184.216 47.147 180.405 45.737 177.584 42.914C174.762 40.093 173.351 36.242 173.351 31.361ZM156.933 23.559C156.933 24.603 157.265 25.421 157.928 26.014C158.59 26.606 160.056 27.354 162.326 28.258C165.238 29.423 167.282 30.734 168.456 32.19C169.631 33.646 170.219 35.408 170.219 37.477C170.219 40.389 169.099 42.729 166.86 44.495C164.62 46.264 161.593 47.147 157.777 47.147C156.492 47.147 155.07 46.992 153.514 46.68C151.957 46.369 150.637 45.972 149.552 45.49V38.321C150.878 39.244 152.304 39.977 153.83 40.519C155.357 41.062 156.742 41.333 157.988 41.333C159.634 41.333 160.85 41.102 161.633 40.64C162.416 40.178 162.808 39.405 162.808 38.321C162.808 37.316 162.401 36.467 161.588 35.775C160.775 35.081 159.233 34.283 156.963 33.379C154.272 32.255 152.365 30.99 151.24 29.584C150.115 28.178 149.552 26.391 149.552 24.221C149.552 21.43 150.662 19.135 152.881 17.337C155.1 15.54 157.978 14.642 161.513 14.642C162.597 14.642 163.812 14.762 165.158 15.002C166.503 15.244 167.628 15.556 168.532 15.937V22.866C167.568 22.223 166.443 21.671 165.158 21.208C163.872 20.746 162.597 20.516 161.332 20.516C159.946 20.516 158.866 20.787 158.093 21.329C157.32 21.871 156.933 22.615 156.933 23.559ZM121.868 31.12C121.868 34.354 122.6 36.824 124.067 38.532C125.533 40.239 127.632 41.091 130.363 41.091C133.015 41.091 135.033 40.239 136.418 38.532C137.804 36.824 138.497 34.293 138.497 30.939C138.497 27.606 137.779 25.09 136.343 23.393C134.907 21.696 132.893 20.848 130.303 20.848C127.632 20.848 125.558 21.736 124.082 23.514C122.605 25.29 121.868 27.827 121.868 31.12ZM114.276 31.361C114.276 26.24 115.722 22.183 118.614 19.19C121.506 16.198 125.523 14.702 130.664 14.702C135.505 14.702 139.285 16.143 142.007 19.025C144.728 21.908 146.089 25.798 146.089 30.699C146.089 35.72 144.642 39.716 141.751 42.688C138.859 45.661 134.922 47.147 129.941 47.147C125.141 47.147 121.33 45.737 118.509 42.914C115.687 40.093 114.276 36.242 114.276 31.361ZM111.14 14.912C111.722 14.912 112.245 14.953 112.706 15.034C113.168 15.114 113.56 15.213 113.882 15.334V22.715C113.5 22.434 112.942 22.168 112.21 21.917C111.476 21.665 110.587 21.54 109.544 21.54C107.756 21.54 106.245 22.293 105.01 23.799C103.775 25.306 103.157 27.625 103.157 30.758V46.394H95.866V15.425H103.157V20.305H103.277C103.94 18.618 104.944 17.298 106.29 16.343C107.635 15.39 109.252 14.912 111.14 14.912ZM83.184 41.091C84.268 41.091 85.463 40.841 86.768 40.339C88.074 39.836 89.279 39.174 90.384 38.35V45.128C89.219 45.791 87.898 46.293 86.422 46.634C84.947 46.976 83.324 47.147 81.557 47.147C76.997 47.147 73.292 45.706 70.441 42.824C67.588 39.942 66.163 36.262 66.163 31.784C66.163 26.802 67.619 22.701 70.531 19.476C73.443 16.253 77.57 14.642 82.913 14.642C84.279 14.642 85.659 14.818 87.055 15.169C88.451 15.52 89.56 15.926 90.384 16.388V23.378C89.259 22.554 88.109 21.917 86.934 21.464C85.76 21.013 84.559 20.787 83.334 20.787C80.462 20.787 78.143 21.721 76.375 23.589C74.608 25.456 73.724 27.977 73.724 31.15C73.724 34.283 74.572 36.724 76.27 38.471C77.967 40.218 80.272 41.091 83.184 41.091ZM53.781 46.394H61.071V15.425H53.781V46.394ZM53.028 6.478C53.028 5.273 53.465 4.263 54.339 3.45C55.212 2.636 56.251 2.23 57.456 2.23C58.741 2.23 59.807 2.647 60.65 3.48C61.494 4.313 61.915 5.313 61.915 6.478C61.915 7.662 61.483 8.657 60.62 9.459C59.756 10.263 58.702 10.664 57.456 10.664C56.211 10.664 55.162 10.258 54.309 9.445C53.454 8.631 53.028 7.642 53.028 6.478ZM46.755 3.194V46.394H39.254V12.533H39.133L25.727 46.394H20.757L7.019 12.533H6.929V46.394H0V3.194H10.755L23.167 35.217H23.347L36.452 3.194H46.755Z" transform="translate(93.5977 11.2052)" fill="white"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 34.219H34.219V0H0V34.219Z" transform="translate(0.00499725 0.00601196)" fill="#F25022"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 34.219H34.219V0H0V34.219Z" transform="translate(37.779)" fill="#7FBA00"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 34.219H34.219V0H0V34.219Z" transform="translate(0 37.779)" fill="#00A4EF"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 34.219H34.219V0H0V34.219Z" transform="translate(37.779 37.779)" fill="#FFB900"/>
+                                </symbol>
+                            </defs>
+                        </svg><svg aria-hidden="true" role="presentation">
+                            <use xlink:href="#svg-msazure-logo"></use>
+                        </svg>
+                    </a>
+                </div>
+                <ul class="nav-basic-links">
+
+                    <li class="my-account">
+                        <a href="https://azure.microsoft.com/account" title="My account" data-event="global-navigation-header-clicked-myaccountlink">My account</a>
+                    </li>
+                    <li class="portal">
+                        <a href="https://portal.azure.com/">Portal</a>
+                    </li>
+
+                </ul>
+            </form>
+        </nav>
+    </header>
+</div>
+
+<main data-tag-area="content" id="main" data-tag-group="body" tabindex="-1">
+
+
+
+
+
+
+
+    <div class="section section-size2 section-palette06 status-hero">
+        <div class="row column">
+            <ul class="breadcrumbs">
+                <li itemscope itemtype="https://schema.org/breadcrumb">
+                    <a data-event="global-navigation-body-clicked-breadcrumb" href="/en-us/status/" itemprop="url">
+                        <span itemprop="title">Status</span>
+                    </a>
+                </li>
+                <li itemscope itemtype="https://schema.org/breadcrumb">
+                    <span itemprop="title">History</span>
+                </li>
+            </ul>
+
+            <h1>Azure status history</h1>
+        </div>
+    </div>
+    <section class="section" aria-label="Service status history">
+        <div class="row">
+            <div class="column large-4">
+                <p>Product:</p>
+                <select aria-label="Product:" id="wa-dropdown-service" name="wa-dropdown-service" data-dropdown-event="area-status-history-changed-productdropdown" data-dropdown-property="CommonProductDropdownValue">
+                    <option value="all">All</option>
+                    <option value="access-control">Access Control Service</option>
+                    <option value="action-groups">Action Groups</option>
+                    <option value="activity-log">Activity Log</option>
+                    <option value="alerts">Alerts</option>
+                    <option value="alerts-classic">Alerts (Classic)</option>
+                    <option value="anomaly-detector">Anomaly Detector</option>
+                    <option value="api-management">API Management</option>
+                    <option value="app-configuration">App Configuration</option>
+                    <option value="app-service">App Service</option>
+                    <option value="app-service-linux">App Service (Linux)</option>
+                    <option value="application-gateway">Application Gateway</option>
+                    <option value="application-insights">Application Insights</option>
+                    <option value="automation">Automation</option>
+                    <option value="autoscale">AutoScale</option>
+                    <option value="active-directory">Azure Active Directory</option>
+                    <option value="active-directory-b2c">Azure Active Directory B2C</option>
+                    <option value="active-directory-ds">Azure Active Directory Domain Services</option>
+                    <option value="advisor">Azure Advisor</option>
+                    <option value="analysis-services">Azure Analysis Services</option>
+                    <option value="azure-api-for-fhir">Azure API for FHIR</option>
+                    <option value="azure-devops\artifacts">Azure Artifacts</option>
+                    <option value="backup">Azure Backup</option>
+                    <option value="azure-bastion">Azure Bastion</option>
+                    <option value="batch-ai">Azure Batch AI</option>
+                    <option value="blockchain-service">Azure Blockchain Service</option>
+                    <option value="blueprints">Azure Blueprints</option>
+                    <option value="azure-devops\boards">Azure Boards</option>
+                    <option value="bot-service">Azure Bot Service</option>
+                    <option value="redis-cache">Azure Cache for Redis</option>
+                    <option value="container-service-v2">Azure Container Service</option>
+                    <option value="cosmos-db">Azure Cosmos DB</option>
+                    <option value="data-explorer">Azure Data Explorer</option>
+                    <option value="data-lake-store">Azure Data Lake Storage Gen1</option>
+                    <option value="data-share">Azure Data Share</option>
+                    <option value="mariadb">Azure Database for MariaDB</option>
+                    <option value="mysql">Azure Database for MySQL</option>
+                    <option value="postgresql">Azure Database for PostgreSQL</option>
+                    <option value="database-migration">Azure Database Migration Service</option>
+                    <option value="databricks">Azure Databricks</option>
+                    <option value="ddos-protection">Azure DDoS Protection</option>
+                    <option value="azure-dedicated-hsm">Azure Dedicated HSM</option>
+                    <option value="azure-devops">Azure DevOps</option>
+                    <option value="devtest-lab">Azure DevTest Labs</option>
+                    <option value="digital-twins">Azure Digital Twins</option>
+                    <option value="dns">Azure DNS</option>
+                    <option value="azure-firewall">Azure Firewall</option>
+                    <option value="frontdoor">Azure Front Door</option>
+                    <option value="functions">Azure Functions</option>
+                    <option value="hpc-cache">Azure HPC Cache</option>
+                    <option value="information-protection">Azure Information Protection</option>
+                    <option value="azure-integration-runtime">Azure Integration Runtime</option>
+                    <option value="iot-central">Azure IoT Central</option>
+                    <option value="iot-edge">Azure IoT Edge</option>
+                    <option value="iot-hub">Azure IoT Hub</option>
+                    <option value="kubernetes-service">Azure Kubernetes Service (AKS)</option>
+                    <option value="lab-services">Azure Lab Services</option>
+                    <option value="azure-lighthouse">Azure Lighthouse</option>
+                    <option value="machine-learning-service">Azure Machine Learning service</option>
+                    <option value="managed-applications">Azure Managed Applications</option>
+                    <option value="azure-maps">Azure Maps</option>
+                    <option value="azure-migrate">Azure Migrate</option>
+                    <option value="azure-mobile-app">Azure mobile app</option>
+                    <option value="monitor">Azure Monitor</option>
+                    <option value="netapp">Azure NetApp Files</option>
+                    <option value="open-datasets">Azure Open Datasets</option>
+                    <option value="azure-devops\pipelines">Azure Pipelines</option>
+                    <option value="azure-policy">Azure Policy</option>
+                    <option value="private-link">Azure Private Link</option>
+                    <option value="openshift">Azure Red Hat OpenShift</option>
+                    <option value="azure-devops\repos">Azure Repos</option>
+                    <option value="azure-resource-manager">Azure Resource Manager</option>
+                    <option value="search">Azure Search</option>
+                    <option value="azure-sentinel">Azure Sentinel</option>
+                    <option value="signalr-service">Azure SignalR Service</option>
+                    <option value="site-recovery">Azure Site Recovery</option>
+                    <option value="azure-sphere">Azure Sphere</option>
+                    <option value="spring-cloud">Azure Spring Cloud</option>
+                    <option value="sql-database">Azure SQL Database</option>
+                    <option value="azure-stack">Azure Stack</option>
+                    <option value="stream-analytics">Azure Stream Analytics</option>
+                    <option value="azure-devops\test-plans">Azure Test Plans</option>
+                    <option value="time-series-insights">Azure Time Series Insights</option>
+                    <option value="azure-vmware-cloudsimple">Azure VMware Solution by CloudSimple</option>
+                    <option value="azure-microsoft-com">azure.microsoft.com</option>
+                    <option value="batch">Batch</option>
+                    <option value="autosuggest-api">Bing Autosuggest</option>
+                    <option value="cognitive-services\bing-custom-search">Bing Custom Search</option>
+                    <option value="cognitive-services\bing-entity-search-api">Bing Entity Search</option>
+                    <option value="cognitive-services\bing-image-search-api">Bing Image Search</option>
+                    <option value="cognitive-services\bing-news-search-api">Bing News Search</option>
+                    <option value="speech-api">Bing Speech</option>
+                    <option value="spellcheck-api">Bing Spell Check</option>
+                    <option value="cognitive-services\bing-video-search-api">Bing Video Search</option>
+                    <option value="cognitive-services\bing-web-search-api">Bing Web Search</option>
+                    <option value="biztalk-services">BizTalk Services</option>
+                    <option value="cloud-services">Cloud Services</option>
+                    <option value="cloud-shell">Cloud Shell</option>
+                    <option value="cognitive-services">Cognitive Services</option>
+                    <option value="computer-vision">Computer Vision</option>
+                    <option value="container-instances">Container Instances</option>
+                    <option value="container-registry">Container Registry</option>
+                    <option value="cdn">Content Delivery Network</option>
+                    <option value="content-moderator">Content Moderator</option>
+                    <option value="custom-vision-service">Custom Vision</option>
+                    <option value="data-catalog">Data Catalog</option>
+                    <option value="data-factory">Data Factory</option>
+                    <option value="data-factory-v1">Data Factory V1</option>
+                    <option value="data-lake-analytics">Data Lake Analytics</option>
+                    <option value="diagnostic-logs">Diagnostic Logs</option>
+                    <option value="media-services\encoding">Encoding</option>
+                    <option value="active-directory\enterprise-state-roaming">Enterprise State Roaming</option>
+                    <option value="event-grid">Event Grid</option>
+                    <option value="event-hubs">Event Hubs</option>
+                    <option value="expressroute">ExpressRoute</option>
+                    <option value="expressroute\circuits">ExpressRoute Circuits</option>
+                    <option value="expressroute\gateways">ExpressRoute Gateways</option>
+                    <option value="face-api">Face</option>
+                    <option value="cognitive-services\form-recognizer">Form Recognizer</option>
+                    <option value="hdinsight">HDInsight</option>
+                    <option value="immersive-reader">Immersive Reader</option>
+                    <option value="cognitive-services\ink-recognizer">Ink Recognizer</option>
+                    <option value="iot-hub\device-provisioning-service">IoT Hub Device Provisioning Service</option>
+                    <option value="key-vault">Key Vault</option>
+                    <option value="language-understanding-intelligent-services">Language Understanding</option>
+                    <option value="media-services\on-demand-streaming">Live and On-Demand Streaming</option>
+                    <option value="load-balancer">Load Balancer</option>
+                    <option value="log-analytics">Log Analytics</option>
+                    <option value="logic-apps">Logic Apps</option>
+                    <option value="machine-learning-studio">Machine Learning Studio</option>
+                    <option value="marketplace">Marketplace</option>
+                    <option value="media-services">Media Services</option>
+                    <option value="metrics">Metrics</option>
+                    <option value="azure-portal">Microsoft Azure portal</option>
+                    <option value="genomics">Microsoft Genomics</option>
+                    <option value="multi-factor-authentication">Multi-Factor Authentication</option>
+                    <option value="network-access">Network Infrastructure</option>
+                    <option value="network-performance-monitor">Network Performance Monitor</option>
+                    <option value="network-watcher">Network Watcher</option>
+                    <option value="notification-hubs">Notification Hubs</option>
+                    <option value="cognitive-services\personalizer">Personalizer</option>
+                    <option value="power-bi-embedded">Power BI Embedded</option>
+                    <option value="cognitive-services\qna-maker">QnA Maker</option>
+                    <option value="sap-hana-large">SAP HANA on Azure Large Instances</option>
+                    <option value="scheduler">Scheduler</option>
+                    <option value="security-center">Security Center</option>
+                    <option value="service-bus">Service Bus</option>
+                    <option value="service-fabric">Service Fabric</option>
+                    <option value="service-map">Service Map</option>
+                    <option value="spatial-anchors">Spatial Anchors</option>
+                    <option value="speaker-recognition">Speaker Recognition</option>
+                    <option value="speech-services">Speech Services</option>
+                    <option value="sql-data-warehouse">SQL Data Warehouse</option>
+                    <option value="sql-server-stretch-database">SQL Server Stretch Database</option>
+                    <option value="ssis-integration-runtime">SSIS Integration Runtime</option>
+                    <option value="storage">Storage Accounts</option>
+                    <option value="storsimple">StorSimple</option>
+                    <option value="text-analytics">Text Analytics</option>
+                    <option value="traffic-manager">Traffic Manager</option>
+                    <option value="translator-speech-api">Translator Speech</option>
+                    <option value="translator-text-api">Translator Text</option>
+                    <option value="media-services\video-indexer">Video Indexer</option>
+                    <option value="virtual-machine-scale-sets">Virtual Machine Scale Sets</option>
+                    <option value="virtual-machines">Virtual Machines</option>
+                    <option value="virtual-network">Virtual Network</option>
+                    <option value="virtual-wan">Virtual WAN</option>
+                    <option value="app-center">Visual Studio App Center</option>
+                    <option value="vpn-gateway">VPN Gateway</option>
+                    <option value="app-service\containers">Web App for Containers</option>
+                    <option value="app-service\web">Web Apps</option>
+                    <option value="app-service\web-linux">Web Apps Linux</option>
+                    <option value="windows-10-iot-core">Windows 10 IoT Core Services</option>
+                    <option value="virtual-desktop">Windows Virtual Desktop</option>
+                </select>
+            </div>
+            <div class="column large-4">
+                <p>Region:</p>
+                <select aria-label="Region:" id="wa-dropdown-history-region" name="wa-dropdown-history-region" data-dropdown-event="area-status-history-changed-regiondropdown" data-dropdown-property="CommonRegionDropdownValue">
+                    <option value="all">All</option>
+                    <option value="global">Global</option>
+                    <option value="asia-pacific-east">East Asia</option>
+                    <option value="asia-pacific-southeast">Southeast Asia</option>
+                    <option value="australia-central-2">Australia Central 2</option>
+                    <option value="australia-central">Australia Central</option>
+                    <option value="australia-east">Australia East</option>
+                    <option value="australia-southeast">Australia Southeast</option>
+                    <option value="brazil-south">Brazil South</option>
+                    <option value="canada-central">Canada Central</option>
+                    <option value="canada-east">Canada East</option>
+                    <option value="central-india">Central India</option>
+                    <option value="south-india">South India</option>
+                    <option value="west-india">West India</option>
+                    <option value="china-east-2">China East 2</option>
+                    <option value="china-east">China East</option>
+                    <option value="china-non-regional">China Non-Regional</option>
+                    <option value="china-north-2">China North 2</option>
+                    <option value="china-north">China North</option>
+                    <option value="europe-north">North Europe</option>
+                    <option value="europe-west">West Europe</option>
+                    <option value="france-central">France Central</option>
+                    <option value="france-south">France South</option>
+                    <option value="germany-central">Germany Central</option>
+                    <option value="germany-non-regional">Germany Non-Regional</option>
+                    <option value="germany-north">Germany North</option>
+                    <option value="germany-northeast">Germany Northeast</option>
+                    <option value="germany-west-central">Germany West Central</option>
+                    <option value="japan-east">Japan East</option>
+                    <option value="japan-west">Japan West</option>
+                    <option value="korea-central">Korea Central</option>
+                    <option value="korea-south">Korea South</option>
+                    <option value="public-non-regional">Public Non-Regional</option>
+                    <option value="south-africa-north">South Africa North</option>
+                    <option value="south-africa-west">South Africa West</option>
+                    <option value="switzerland-north">Switzerland North</option>
+                    <option value="switzerland-west">Switzerland West</option>
+                    <option value="uae-central">UAE Central</option>
+                    <option value="uae-north">UAE North</option>
+                    <option value="united-kingdom-south">UK South</option>
+                    <option value="united-kingdom-west">UK West</option>
+                    <option value="us-central">Central US</option>
+                    <option value="us-east-2">East US 2</option>
+                    <option value="us-east">East US</option>
+                    <option value="us-north-central">North Central US</option>
+                    <option value="us-south-central">South Central US</option>
+                    <option value="us-west-2">West US 2</option>
+                    <option value="us-west-central">West Central US</option>
+                    <option value="us-west">West US</option>
+                    <option value="us-dod-central">US DoD Central</option>
+                    <option value="us-dod-east">US DoD East</option>
+                    <option value="usgov-arizona">US Gov Arizona</option>
+                    <option value="usgov-iowa">US Gov Iowa</option>
+                    <option value="usgov-non-regional">US Gov Non-Regional</option>
+                    <option value="usgov-texas">US Gov Texas</option>
+                    <option value="usgov-virginia">US Gov Virginia</option>
+                </select>
+            </div>
+
+            <div class="column large-4">
+                <p>Date:</p>
+                <select aria-label="Date:" id="wa-dropdown-date" name="wa-dropdown-date" data-dropdown-event="area-status-history-changed-datedropdown" data-dropdown-property="CommonDateRangeDropdownValue">
+                    <option value="recent">Most recent</option>
+                    <option value="20191027">Last 48 hours</option>
+                    <option value="20191022">Last week</option>
+                    <option value="20190929">Last month</option>
+                    <option value="20190731">Last 90 days</option>
+                </select>
+            </div>
+        </div>
+        <div class="row row-size3 column" id="history-results-container">
+
+
+
+            <div class="row column">
+                <h2>October 2019</h2>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">10/25</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">Azure Databricks and Data Factory v2 - Workspace and Data Flow Errors</h3>
+                    <p><p><strong>Summary of impact:</strong> Between approximately 11:00 and 14:40 UTC on 25 Oct 2019, a subset of customers using Azure Databricks may have received 'No Web App available' error notifications when logging into a Databricks workspace. Related API calls may have also not returned a response. Additionally, a very limited subset of customers using Data Factory v2 may have received failure notifications for Data Flow jobs.</p><p></p><p><strong>Preliminary root cause:</strong> Engineers determined that a backend database used to process workspace access requests became unhealthy, causing requests to fail. As this database supports the control plane for the East US, East US 2, Central US, and North Central US regions, only customers in these regions would have seen impact. Additionally, a small number of Data Factory v2 customers in these regions would have seen downstream impact from this issue.</p><p></p><p><strong>Mitigation:</strong> Engineers redeployed the affected backend database to mitigate the issue.</p><p></p><p><strong>Next steps:</strong> Engineers will continue to investigate to establish the full root cause and prevent future occurrences. Stay informed about Azure service issues by creating custom service health alerts: <a href="https://aka.ms/ash-videos" class="wa-link-status">https://aka.ms/ash-videos</a> for video tutorials and <a href="https://aka.ms/ash-alerts" class="wa-link-status">https://aka.ms/ash-alerts</a> for how-to documentation.<br></p><p></p><p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">10/22</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">RCA - Service Availability - West Europe</h3>
+                    <p><strong><span style="text-decoration: underline"></span></strong><p><strong>Summary of impact:</strong> Between 21:15 UTC on 22 Oct 2019 and 00:23 UTC on 23 Oct 2019, a subset of customers using Storage in West Europe may have experienced service availability issues. In addition, resources with dependencies on the impacted storage unit may have experienced downstream impact in the form of availability issues or high latency.</p><p></p><p><strong>Root cause:</strong> Azure Storage service uses an automatic load balancing system to partition and balance customer workloads across different servers within a storage scale unit. A partition master role maintains the map of how the partitions are distributed across the different partition servers. A routine maintenance operation on one of the partitions caused an inconsistency in the partition map due to a bug. This caused the servers handling the inconsistent state to crash and resulted in a single storage scale unit in West Europe becoming unhealthy. This also resulted in downstream availability impact to several dependent services in the region.</p><p></p><p><strong>Note:</strong> On 21 Oct 2019, a different storage scale unit in the region was first impacted by this bug. Some customers may have been impacted by both incidents if their workloads were spread across both of the storage scale units. As part of mitigating the first incident, we had blocked the backend operation that triggered the bug until the fix was deployed. However, we did not identify a second entry point which could trigger the bug resulting in the incident on 22 Oct 2019.</p><p></p><p><strong>Mitigation:</strong> Engineers modified the tool that was created during the incident on 21 Oct 2019 to correct the inconsistency in the partition map specific to the impacted scale unit.</p><p>Engineers also blocked all backend operations that can trigger the inconsistent state until the fix was deployed globally.</p><p>Once the storage backend service health was restored, all dependent services automatically recovered.</p><p></p><p><strong>Next steps:</strong> We sincerely apologize for the impact to affected customers. We are continuously taking steps to improve the Microsoft Azure Platform and our processes to help ensure such incidents do not occur in the future. In this case, this includes (but is not limited to):</p><ul><li>Engineers understand the root cause of the bug which triggered the inconsistent system state and have rolled out a fix across production to help ensure the triggering functionality has been disabled from all entry-points.</li><li>Engineers are hardening the load-balancing system to detect and reject inconsistencies in the partition map in a safe manner to prevent impact on system health.</li></ul><p></p><p><strong>Provide feedback:</strong> Please help us improve the Azure customer communications experience by taking our survey <a href="https://aka.ms/0_N8-DT8" class="wa-link-status">https://aka.ms/0_N8-DT8</a><br></p><p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">10/22</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">Azure Portal Sign In Failure - West Europe - Mitigated</h3>
+                    <p><strong>Summary of Impact:</strong> Between 06:40 UTC and 09:54 UTC on 22 Oct 2019 a subset of customers were identified as having experienced issues signing in to the Azure Portal in West Europe. Customers would have seen failure notifications when trying to sign in. Accessing the preview Portal here would have been successful.&nbsp;</p><p><strong>Preliminary Root Cause:</strong> Engineers
+                        determined that a recent deployment task increased traffic to a backend
+                        service, in this case AAD, which in turn reached operational threshold, preventing requests from completing.</p><p><strong>Mitigation:</strong> Engineers
+                        performed a change to the service configuration to mitigate the issue. Engineers also rolled back the recent deployment task to further mitigate the issue.</p><p style="margin: 0cm; margin-bottom: .0001pt"><strong>Next Steps:</strong> Engineers
+                        will review deployment procedures to prevent future occurrences. Stay informed
+                        about Azure service issues by creating custom service health alerts: <a href="https://aka.ms/ash-videos" class="wa-link-status">https://aka.ms/ash-videos</a>
+                        for video tutorials and <a href="https://aka.ms/ash-alerts" class="wa-link-status">https://aka.ms/ash-alerts</a> for how-to documentation.</p><p></p><p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">10/21</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">RCA - Storage - West Europe</h3>
+                    <p><strong><span style="text-decoration: underline"></span></strong><p><strong>Summary of impact:</strong> Between 23:20 UTC on 21 Oct 2019 and 04:32 UTC on 22 Oct 2019, a subset of customers using Storage in West Europe may have experienced service availability issues. In addition, resources with dependencies on the impacted storage unit may have experienced downstream impact in the form of availability issues or high latency.</p><p></p><p><strong>Root cause:</strong> The Azure Storage service uses an automatic load balancing system to partition and balance customer workloads across different servers within a storage scale unit. A partition master role maintains the map of how the partitions are distributed across the different partition servers. A routine maintenance operation on one of the partitions caused an inconsistency in the partition map due to a bug. This caused the servers handling the inconsistent state to crash and resulted in a single storage scale unit in West Europe becoming unhealthy. Downstream availability impact was then seen to several dependent services in the region.</p><p></p><p><strong>Mitigation:</strong> Engineers developed a tool to correct the inconsistency in the partition map on the impacted scale unit. The time taken to develop and test this tool resulted in a higher than expected recovery time. Engineers also blocked the backend operation that triggered the inconsistent state until the underlying bug is fixed. Once service health was restored to the backend Storage scale unit, all dependent services automatically recovered.</p><p></p><p><strong>Next steps:</strong> We sincerely apologize for the impact to affected customers. We are continuously taking steps to improve the Microsoft Azure Platform and our processes to help ensure such incidents do not occur in the future. In this case, this includes (but is not limited to):</p><ul><li>Engineers understand the root cause of the bug which triggered the inconsistent system state and have rolled out a fix across production to help ensure the triggering functionality has been disabled from all entry-points.</li><li>Engineers are hardening the load-balancing system to detect and reject inconsistencies in the partition map in a safe manner to prevent impact on system health.</li></ul><p></p><p><strong>Provide feedback:</strong> Please help us improve the Azure customer communications experience by taking our survey: <a href="https://aka.ms/GV6D-998" class="wa-link-status">https://aka.ms/GV6D-998</a><br></p><ul></ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">10/21</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">RCA - Service Management Errors - East US 2</h3>
+                    <p><strong>Summary of Impact:</strong> Between 10:08 and 23:37 UTC on 21 Oct 2019, a subset of customers in East US 2 may have received error notifications or experienced high latency when performing service management operations - such as create, update, or delete - for resources hosted in this region. Additionally, customers using Azure Databricks and/or Data Factory v2 may have encountered service management errors in multiple regions. A very limited subset of customers using Virtual Machines with SQL Server images, or other SQL IaaS offerings, may have also encountered errors performing service management operations on resources hosted in East US 2.<br><br><strong>Root Cause:</strong> Engineers had investigated and found that an internal service, “service fabric cluster manager”, was near capacity due to the legacy hardware that was being used. Around 9:00 UTC on 21 Oct 2019, a regular operation spike caused the cluster manager to reach its capacity limit, resulting in queueing and increased latency. The increased latency triggered retries on the Regional Network control plane service (RNM), which then went into a feedback loop, causing operations to queue up and forced the Regional Network Manager (RNM) into a state where it was not able to recover.&nbsp;<br><br><strong>Mitigation: </strong>Engineers moved the cluster manager from the legacy hardware to new Gen5 hardware to mitigate.<br><br><strong>Next Steps: </strong>We sincerely apologize for the impact to affected customers. We are continuously taking steps to improve the Microsoft Azure Platform and our processes to help ensure such incidents do not occur in the future. In this case, this includes (but is not limited to):&nbsp;</p><ul><li>Moving the cluster manager to the latest Gen5 hardware in all regions.</li><li>Implementing caching on the gateway to reduce frequent calls to the cluster manager, which will help with reducing the load.</li><li>Improving the Regional Network Manager (RNM) operation feedback loops to no longer queue up operations indefinitely.</li></ul><p><strong>Provide Feedback:</strong> Please help us improve the Azure customer communications experience by taking our survey: <a href="https://aka.ms/4_69-3D8" class="wa-link-status">https://aka.ms/4_69-3D8</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">10/18</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">RCA - Authentication issues with Azure MFA in North America</h3>
+                    <h3 style="font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-weight: 400; line-height: 1.3; color: #333333; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 20px; background-color: #ffffff"><span style="font-family: Verdana, Geneva, sans-serif; font-size: 12px"><strong></strong></span></h3><p><strong></strong><strong></strong><strong></strong><p><strong>Summary of impact:</strong> Between 13:30 UTC and 15:57 UTC on 18 October 2019, customers in North America experienced issues receiving multi-factor authentication (MFA) challenges. Users who had valid MFA claims during the incident were not impacted. However, users who were required to perform an MFA challenge during this incident were unable to complete the challenge. This represented 0.51% of users in North American tenants using the service during the incident.</p><p></p><p><strong>Root cause:</strong> At 13:30 UTC, severe packet loss was experienced on an external network route between Microsoft and the Apple Push Notification Service (APNS). The packet loss was greater in severity and duration than previously encountered. It also coincided with morning peak traffic in North America. This combination of events caused a build-up of unprocessed requests in the MFA service, leading to service degradation and failures in MFA requests.</p><p></p><p><strong>Mitigation:</strong> Service monitors detected the build-up of unprocessed requests in the MFA service at 13:38 UTC and engineers were fully engaged by 13:48 UTC. Engineering confirmed the issue was a loss of network connectivity and began troubleshooting within the Microsoft datacenter networks. Engineering determined that the datacenter networks did not experience loss of connectivity and pinpointed the issue as external to the Microsoft datacenter networks. While further troubleshooting was underway to identify the most impacted network routes, engineering prepared a hotfix to bypass the impacted external service altogether, and to restore MFA functionality. The hotfix was rolled out to one region to validate the effectiveness of the fix. In the meantime, the external network recovered, and packet loss was reduced to normal rates. Engineering paused further rollout of the hotfix. The network issue was confirmed to be mitigated at 15:57 UTC, and the MFA service functionality recovered. The hotfix, which was then redundant, was rolled back.&nbsp;</p><p>Following mitigation, engineering immediately performed the below tasks to harden the service against a similar degradation in the future:</p><ul><li>The impacted network path was pinpointed, and traffic was reconfigured to bypass the failure path.</li><li>Three hotfixes to the service were immediately rolled out to rebalance network traffic and increase resiliency to network failures</li><li>Precise alerts were setup to monitor for the specific network condition which triggered the issue.&nbsp;</li></ul><p></p><p><strong>Next steps:</strong> We sincerely apologize for the impact to affected customers. We are continuously taking steps to improve the Microsoft Azure platform and our processes to help ensure such incidents do not occur in the future, including, but not limited to:</p><p>1. Fine-grained fault domain isolation work has been accelerated. This work builds on the previous fault domain isolation work which limited this incident to North American tenants. This includes:</p><ul><li>Additional physical partitioning within each Azure region.</li><li>Logical partitioning between authentication types.</li><li>Improved partitioning between service tiers.</li></ul><p>2. Additional hardening and redundancy within each granular fault domain to make them more resilient to network connectivity loss. This includes:</p><ul><li>Improved resilience to request build-up.</li><li>Optimizing network traffic to decrease load on network links.</li><li>Improved instructions to users for self-service in case notifications are not delivered.</li><li>Service restructuring to decrease service impact of network packet loss.</li></ul><p>3. Enhanced monitoring for networking latency and various resource usage thresholds. This includes:</p><ul><li>Multi-region and multi-cloud targeted monitoring for the specific type of packet loss encountered.</li><li>Improved monitors for additional types of resource usage.</li></ul><p><strong>Other categories and action items are being actively identified.</strong></p><p></p><p><strong>Provide feedback:</strong> Please help us improve the Azure customer communications experience by taking our survey <a href="https://aka.ms/1TP8-PS0" class="wa-link-status">https://aka.ms/1TP8-PS0</a><br></p><div style="font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px"><span color=""><p></p></span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">10/16</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">RCA - Azure Portal</h3>
+                    <p><strong>Summary of Impact:</strong> Between 13:45 and 14:59 UTC (approx.) on 16 Oct 2019, a subset of customers may have experienced latency issues with the Azure Portal, Command Line, and Azure PowerShell. Services already running would not have experienced impact during this issue.</p><p><strong>Root Cause:</strong> Azure Resource Manager (ARM) is the underlying deployment and management service for Azure, providing the management layer that allows create, update, delete, etc. functions for the platform. Customers interact with ARM every time they use the platform, but the primary interaction points are via PowerShell, Command line, APIs and/or the Azure Portal.</p><p>During this incident a number of scale units in one of our UK South data centers responsible for processing ARM requests became overloaded. This caused intermittent latency for some customers in this region as they would have been directed to their nearest ARM endpoints. As retry logic and customer initiated retries ensued, this added to the load for these scale units, and impact to customers became more prevalent.</p><p>The underlying cause was twofold:</p><ul><li>A routine deployment update for the ARM backend service had taken place overnight in UK South. The update was successful, but as it deployed, it reduced the number of ARM instances, as the code branch for this deployment had not been updated to the new value required in this region.</li><li>The resources in UK South are normally over-scaled versus demand, and thus they were not aligned with the same auto-scale functionality as other regions that ARM uses.<br></li></ul><p>Following the above deployment, there was no immediate impact to ARM workloads in the region. However, as requests to ARM began to climb during the business day, the lower number of instances, and the lack of an immediate auto-scale response caused this to manifest as customer-impacting latency.</p><p><strong>Mitigation:</strong> Initially engineers manually scaled-out the service to ensure adequate resources were available. There were some delays in the application of these steps, as this is a highly secure environment, and the change-approvals process had recently been updated.</p><p>Subsequently, engineers applied a mitigation to ensure the auto-scale functionality was restored to prevent this issue reoccurring. Engineers then monitored the service for an extended period following mitigation to ensure all requests backlogs cleared, and that auto-scale functionality was correctly enabled.</p><p><strong>Next Steps:</strong> We sincerely apologize for the impact to affected customers. We are continuously taking steps to improve the Microsoft Azure Platform and our processes to help ensure such incidents do not occur in the future. In this case, this includes (but is not limited to):</p><ul><li>Review of monitoring and alerting relating to resource consumption, and requests success rates in ARM</li><li>Review of alerting for scale-up functionality underpinning the ARM platform</li><li>Investigation of auto-mitigation options to prevent this scenario from reoccurring</li><li>Verifying that all on-call engineers are aware of the updated processes for change requests in this environment</li><li>Update of the process regarding change of minimum instance thresholds for regions to ensure deployments do not revert to previous values</li></ul><p><strong>Provide feedback:</strong>&nbsp;Please help us improve the Azure customer communications experience by taking our survey:&nbsp;<a href="https://aka.ms/0_0D-VP8" class="wa-link-status">https://aka.ms/0_0D-VP8</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">10/2</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">Log Analytics - USGov Virginia - Mitigated</h3>
+                    <p><strong>Summary of Impact:</strong> Between 19:45 EDT on 02 Oct 2019 and 23:45 EDT on 03 Oct 2019 a subset of customers using Log Analytics in USGov Virginia may have received 500-level errors when performing queries on log analytics data.</p><p><strong>Preliminary root cause:</strong> Engineers determined that instances of a back-end service responsible for middle-tier authentication became unhealthy, preventing data queries from completing.</p><p><strong>Mitigation:</strong> Engineers deployed a platform hotfix to mitigate the issue.&nbsp;</p><p><strong>Next steps:</strong> Engineers will continue to investigate to establish the full root cause and prevent future occurrences. Stay informed about Azure service issues by creating custom service health alerts: <a href="https://aka.ms/ash-videos" class="wa-link-status">https://aka.ms/ash-videos</a> for video tutorials and <a href="https://aka.ms/ash-alerts" class="wa-link-status">https://aka.ms/ash-alerts</a> for how-to documentation.</p>
+                </div>
+            </div>
+            <div class="row column">
+                <h2>September 2019</h2>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">9/25</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">RCA - Azure Kubernetes Service (AKS) - Provisioning Failures</h3>
+                    <p><strong>Summary of Impact:</strong> Between 20:50 UTC on 25 Sep 2019 and 04:25 UTC on 26 Sep 2019, a subset of customers using Azure Kubernetes Service (AKS) may have received failure notifications when performing create and/or update operations for their resources.</p><p><strong>Root Cause:</strong> An update to a backend service responsible for processing different service management requests for AKS was enabled by a recent configuration change that had been rolled out. This update exposed a code defect for the service and a fix for the defect had yet to complete in the impacted regions. This resulted in failures for the service, preventing it from processing requests. Internal monitoring systems for this issue also did not initially correlate to complete scope of impact, which delayed the investigation.</p><p><strong>Mitigation:</strong> Engineers reverted the configuration change which mitigated the issue.</p><p><strong>Next Steps:</strong> We sincerely apologize for the impact to affected customers. We are continuously taking steps to improve the Microsoft Azure Platform and our processes to help ensure such incidents do not occur in the future. In this case, this included (but was not limited to):</p><ul><li>Monitoring the completion of the fix for the defect in all regions.</li><li>Updating the monitoring systems to improve alerting accuracy for these types of scenarios.</li></ul><p><strong>Provide Feedback:&nbsp;</strong>Please help us improve the Azure customer communications experience by taking our survey <a href="https://aka.ms/GK3M-5D8" class="wa-link-status">https://aka.ms/GK3M-5D8</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">9/16</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">RCA - Azure Front Door Service and Azure CDN</h3>
+                    <p><strong style="font-size: 14px"></strong><strong>Summary of Impact:</strong> Between 00:00 UTC on 16 Sep 2019 and 00:30 UTC on 18 Sep 2019, you were identified as a customer who may have seen provisioning failures with Azure CDN and Azure Front Door service when using new Key Vault Certificates.</p><p><strong>Root Cause:</strong> Engineers determined that a recent deployment task impacted Key Vault API calls, causing the provisioning failures. The deployment change was made to filter out managed secrets for Key Vault portal extensions, however this also impacted Remote Procedure Calls (RPCs). Customers who depend on RPCs would not be able to see Key Vault managed secrets impacting the ability to provision CDN and Azure Front Door services.</p><p><strong>Mitigation:</strong> Engineers deployed a platform hotfix to mitigate the issue.</p><p><strong>Next Steps:</strong>&nbsp; We sincerely apologize for the impact to affected customers. We are continuously taking steps to improve the Microsoft Azure Platform and our processes to help ensure such incidents do not occur in the future. We have implemented additional test scenarios for listSecrets RPCs to prevent future occurrences.</p><p><strong>Provide feedback: </strong>Please help us improve the Azure customer communications experience by taking our survey: <a href="https://aka.ms/5NSM-5P8" class="wa-link-status">https://aka.ms/5NSM-5P8</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">9/11</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">RCA - Australia East - Intermittent Connectivity</h3>
+                    <p><strong>Summary of Impact:&nbsp;</strong>Between 00:30 and 01:40 UTC on 11 Sep 2019, a subset of customers in Australia East may have experienced intermittent connectivity failures when connecting to resources hosted in this region or when accessing the Azure Portal.</p><p><strong>Root Cause and Mitigation:&nbsp;</strong>The Azure Load Balancing service is hosted on multiple servers grouped into rings. During a routine configuration update to a single ring, a health check failed, causing the configuration update to automatically roll back. The rollback process was optimized for speed, and in this case, reduced the capacity of the ring because it updated multiple instances at the same time. When the ring capacity was reduced, there was customer impact due to dropped packets. To prevent this happening in the future, we are adding additional health checks to the rollback process. These checks will ensure that the available capacity does not drop below a minimum specified threshold.</p><p><strong>Next Steps:&nbsp;</strong>We sincerely apologize for the impact to affected customers. We are continuously taking steps to improve the Microsoft Azure Platform and our processes to help ensure such incidents do not occur in the future. In this case, this includes (but is not limited to):</p><ul><li>Capacity health checks during rollback to prevent the rollback process from reducing the capacity below a set threshold.</li><li>Improve the alerting thresholds to capture packet drops on the Azure Software Load Balancer.</li></ul><p><strong>Provide feedback:</strong> Please help us improve the Azure customer communications experience by taking our survey:&nbsp;<a href="https://aka.ms/0M_K-VT8" class="wa-link-status">https://aka.ms/0M_K-VT8</a></p><p></p>
+                </div>
+            </div>
+            <div class="row column">
+                <h2>August 2019</h2>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">8/28</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">RCA - Azure Email Alerts</h3>
+                    <p><strong>Summary of Impact: </strong>Between 20:22 UTC on 28 Aug 2019 and 01:35 UTC on 29 Aug 2019, a subset of customers may not have received email alerts sent from a subset of Azure services during the impact window.</p><p><strong>Root Cause:</strong> Engineers determined that the instance of the backend database service, utilized for email processing, had reached operational thresholds. During scale up operations the service became unresponsive due to logging operations exceeding thresholds. This prevented requests from downstream Azure services, utilizing the Azure Email service, from completing successfully.</p><p><strong>Mitigation:</strong> Engineers halted the scale up operation. Operation throttling thresholds were gradually returned to normal to fully mitigate the issue.</p><p><strong>Next Steps: </strong>We sincerely apologize for the impact to affected customers. We are continuously taking steps to improve the Microsoft Azure Platform and our processes to help ensure such incidents do not occur in the future. In this case, this includes (but is not limited to):</p><ul><li>Improve throttling performance to help ensure that there are sufficient service resources during maintenance activities</li><li>Improve resiliency of the backend service responsible for processing email alerts</li></ul><p><strong>Provide Feedback:</strong> Please help us improve the Azure customer communications experience by taking our survey <a href="https://aka.ms/HLTG-V88" class="wa-link-status">https://aka.ms/HLTG-V88</a></p><p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">8/23</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">RCA - Service Management Operations - West/North Europe</h3>
+                    <p><strong>Summary of Impact:</strong> Between 06:20 and 10:46 UTC on 23 Aug 2019, a subset of customers in North Europe and West Europe may have received failure notifications when performing service management operations - such as create, update, delete - for resources hosted in these regions.</p><p><strong>Root Cause:</strong> During this incident, the memory consumption on Azure Resource Manager’s (ARM) worker roles exceeded operational thresholds. This should have initiated a clearing process which attempts to recover additional memory when thresholds are reached. However, the memory cache was unrecoverable at the time given that it was referenced by other (active) objects in the system. CPU utilization on the affected worker roles also increased, which in turn prevented certain processes from completing.</p><p>Analysis has indicated that all threads on the affected worker roles were busy during the impact window, thus manifesting in impact to service management operations to ARM-dependent services and/or resources.</p><p>In addition, worker roles recycle on a weekly cadence which, in this scenario, further contributed to thresholds being reached. The nature of the issue required manual intervention to fully mitigate, which further delayed mitigation.</p><p><strong>Mitigation:</strong> Engineers performed a manual restart of the affected worker roles to mitigate the issue.</p><p><strong>Next Steps:</strong> We sincerely apologize for the impact to affected customers. We are continuously taking steps to improve the Microsoft Azure Platform and our processes to help ensure such incidents do not occur in the future. In this case, this included (but was not limited to):</p><ul><li>Automatically recycling worker roles on a more frequent cadence [In Progress]</li><li>Separating distinct cache types [In Progress]</li><li>Adding enhanced logging information to understand memory cache usage in worker roles [In Progress]</li><li>Reducing cache footprint [In Progress]</li></ul><p><strong>Provide Feedback:</strong> Please help us improve the Azure customer communications experience by taking our survey <a href="https://aka.ms/HT4G-PC0" class="wa-link-status">https://aka.ms/HT4G-PC0</a>.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">8/16</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">RCA - Azure Services - South Central US</h3>
+                    <p><strong>Summary of impact:</strong> Between 14:16 UTC and 21:36 UTC on 16 Aug 2019, a subset of customers using resources in South Central US may have experienced difficulties connecting to resources hosted in this region.<br></p><p><strong>Root cause:</strong> An outage occurred during a regional infrastructure update, which is part of a South Central US datacenter refresh initiative. At approximately 14:00 UTC on 8/16/2019, facility engineers proceeded with removal of infrastructure following a pre-approved method of procedure (MOP). However, an error in fiber trunk validation resulted in production impacting connectivity loss.<br>The loss of these physical links resulted in connectivity issues with a scale unit in the datacenter that hosted several Azure infrastructure services.<br></p><p><strong>Mitigation:</strong> To mitigate, services with multi-region deployments successfully failed out of the region to minimize impact. Residual impact was mitigated by restoring full fiber connectivity to the affected scale unit and placing it back into production rotation.<br></p><p><strong>Next steps:</strong> We sincerely apologize for the impact to affected customers. We are continuously taking steps to improve the Microsoft Azure Platform and our processes to help ensure such incidents do not occur in the future. In this case, this includes (but is not limited to):<br><ul><li>Halt infrastructure refresh projects globally until below repair items are addressed - Complete</li><li>Method of Procedure (MoP) detailed review as related to infrastructure refresh projects – in progress</li><li>Improve existing physical infrastructure change management process with additional collaboration &amp; validation between facility and infra engineering - in progress.</li></ul></p><p><strong>Provide feedback:</strong> Please help us improve the Azure customer communications experience by taking our survey <a href="https://aka.ms/KT5G-BC8" class="wa-link-status">https://aka.ms/KT5G-BC8</a><br><p style="font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, Helvetica, Arial, sans-serif; font-size: 14px"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">8/14</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">RCA - USGov Iowa - Service Availability and Downstream Impact</h3>
+                    <p><p><strong>Summary of impact:</strong> Between 16:25 EDT on 14 Aug 2019 and 01:00 EDT on 15 Aug 2019, a subset of customers in USGov Iowa may have experienced issues accessing services in that region. Engineers determined that an underlying compute issue was impacting SQL, API Management, Azure Site Recovery, Media Services, Service Bus, and StorSimple.</p><p>A subset of App Service customers may have experienced Service Management issues across these regions: USDoD Central, USDoD East, USGov Arizona, USGov Iowa, USGov Texas, and USGov Virginia.</p><p></p><p><strong>Root cause and mitigation:</strong> Automated health monitoring is utilized in all Azure regions to predict and react to telemetry signals that indicate that a failure condition has occurred on a resource. In this instance, health monitoring indicated that several physical host nodes in the scale unit had reached a threshold for high memory utilization, which resulted in those host nodes moving to a state for repair. An investigation is ongoing into the specific cause of the increased memory footprint on these hosts, but as this is the expected behavior for the platform health monitoring, this was functioning as expected. A secondary issue was detected on review that was causing the build-up of the number of nodes requiring non-automated or manual repair. When nodes are taken out of rotation and put into repair, automation processes the node and will perform needed tasks to achieve repair and return the node to service. In this case, the automation was triggering and was putting the nodes into a manual repair mode, waiting for human intervention. With the increased number of nodes failing and requiring human intervention, this impacted the Service Fabric seed nodes of Azure SQL DB in this stamp. Quorum was lost on seed nodes and databases hosted on this instance of Azure SQL DB became unavailable. In parallel, SQL DB and Compute engineering teams worked to restore these services and nodes in the scale unit. Manually applying the repair to these nodes was successful, after which, the cluster fabric and SQL DB services were able to recover, mitigating the issue.</p><p>After an initial recovery for the SQL DB instance, additional node recovery efforts mistakenly again impacted one of the Service Fabric seed nodes leading to Quorum loss on the seed nodes. This was due to a method of recovery for the systems that were requiring repair. A repair item has been created to address this conflict in recovery. Engineers manually recovered the nodes and brought them back online to restore connectivity to the dependent services, which in turn mitigated the downstream impact once the dependent services were restored.</p><p></p><p><strong>Next steps:</strong> We sincerely apologize for the impact to affected customers. We are continuously taking steps to improve the Microsoft Azure Platform and our processes to help ensure such incidents do not occur in the future. In this case, this includes (but is not limited to):</p><ul><li>Improve the automation repair process to track the number of nodes required to operate the Azure SQL DB service and alert when the number of available nodes comes down below the safe operational thresholds</li><li>Improve alerting from the Service Fabric layer quorum failures to upstream services when failures rate exceeds normal safe operational thresholds</li></ul><p></p><p><strong>Provide feedback:</strong>&nbsp;Please help us improve Azure customer communications experience by taking our survey -&nbsp;<a href="https://aka.ms/HLR7-N98" class="wa-link-status">https://aka.ms/HLR7-N98</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">8/9</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">RCA - Azure Portal - Issues Loading Dashboard Tiles</h3>
+                    <p><strong>Summary of impact:</strong> Between approximately 16:07 and 19:17 UTC on 09 Aug 2019, customers using the Azure portal may have received failure notifications under the following scenarios:<br><ul><li>Customers who had pinned tiles to their dashboards that provided them with a list of resources such as All Resources, All VMs, etc. would have either seen a "No resources found" message or just a grey tile. All other tiles on dashboards such as pinned resources continued to function as expected.</li><li>Access of the following two pages on the Azure Portal. a) "My permissions" page that enables customers to see what permissions they have in a given subscription and b) "Resource Providers" option in the resource menu for any given subscription that lets customers view, register and unregister Resource Providers in their subscriptions. Trying to open one of these two pages would have resulted in the page load timing out after 30 seconds.</li></ul></p><p><strong>Root cause:</strong> The issue was caused by a code change that introduced a bug in an underlying API that the affected experiences relied on. The Azure Portal relies on feature flags to enable or disable features and the above regression would occur only when one such flag was set to the disabled state. While engineering had tests to cover these scenarios, those tests were only run with the flag set to enabled which was not the flag state we had in production.<br></p><p><strong>Mitigation:</strong> Portal engineering received alerts from our monitoring and alerting infrastructure. A roll back to the previous production build that did not contain this regression was initiated. This roll back was completed in multiple regions by 09 Aug 2019 19:09 UTC and affected experiences were back to working as expected at this point of time.<br></p><p><strong>Next steps:</strong> We sincerely apologize for the impact to affected customers. We are continuously taking steps to improve the Microsoft Azure Platform and our processes to help ensure such incidents do not occur in the future. In this case, this includes (but is not limited to):<br><ul><li>Added new tests that runs with all possible states of the particular feature flag that resulted in this incident to ensure that a similar regression is caught before changes get deployed to production.</li></ul></p><p><strong>Provide feedback:</strong> Please help us improve the Azure customer communications experience by taking our survey <a href="https://aka.ms/LTJ7-JP0" class="wa-link-status">https://aka.ms/LTJ7-JP0</a><br><p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-1">
+                    <span class="text-heading4">8/8</span>
+                </div>
+                <div class="column small-11">
+                    <h3 class="text-heading4">RCA - Azure CDN - Connectivity Issues</h3>
+                    <p><p><strong>Summary of impact:</strong> Between 14:05 and 19:00 UTC on 08 Aug 2019, you were identified as a customer using Akamai CDN who may have experienced HTTP 504 (Gateway Timeout) errors when attempting to connect to resources.<br></p><p><strong>Root cause:</strong> Engineers determined that a network update to add new peer servers to the US East region caused connections to fail between Akamai CDN and Azure resources. A network filtering policy on a redundant Microsoft peering device was improperly configured, which caused traffic sourced from Akamai CDN and destined for origins hosted on Azure storage in East US and East US 2 to be intermittently dropped.&nbsp;<br></p><p><strong>Mitigation:</strong> Engineers rolled back the updates to mitigate the issue. After the root cause was identified and the network filtering policy was updated and consistent across the pair of devices, traffic was successfully routed over this path without drops.&nbsp;<br></p><p><strong>Next steps:</strong> We sincerely apologize for the impact to affected customers. We are continuously taking steps to improve the Microsoft Azure Platform and our processes to help ensure such incidents do not occur in the future. In this case, this includes (but is not limited to):</p><ul><li>Inventory device fleet to ensure no further inconsistencies exist for network filtering policies<br></li><li>Update device configuration drift platform to account network filtering policy inconsistencies across device pairs<br></li><li>Add additional automation and checks to update network filtering policies across device fleet to remove the risk of inconsistencies</li></ul><p></p><p><strong>Provide feedback:</strong> Please help us improve the Azure customer communications experience by taking our survey <a href="https://aka.ms/KK63-J98" class="wa-link-status">https://aka.ms/KK63-J98</a><br></p>
+                </div>
+            </div>
+            <input type="hidden" class="wa-historyResult-count" value="17" />
+
+        </div>
+        <div class="row row-size3 column">
+            <nav aria-label="Pagination navigation">
+                <div class="wa-pagination" data-control="pagination" data-prev="Previous page" data-next="Next page" data-gotopage="Go to page" data-currentpage="Current page, page"></div>
+            </nav>
+        </div>
+        <div id="history-error-message" class="hide row row-size3 column" aria-hidden="true">
+            <p class="text-heading4">Sorry for the inconvenience, but something went wrong.  Please try refreshing the page.</p>
+        </div>
+    </section>
+
+
+
+
+</main>
+
+<script type="text/javascript">/* global jQuery */
+
+    (function ($, document) {
+        'use strict';
+
+        $(function () {
+            var $cultures = $('footer #dropdown-cultures select');
+
+            /**
+             * Redirect the current page with selected lang-locale
+             */
+            function updateCulture() {
+                var locale = '/' + $(this).val() + '/';
+                document.location = document.location.pathname.replace(/^\/[a-z]{2}-[a-z]{2}\//, locale); // eslint-disable-line
+            }
+
+            $cultures.on('change', updateCulture);
+        });
+    })(jQuery, window.document);
+</script><footer class="section-footer" data-tag-area="footer" data-tag-group="footer">
+
+
+
+    <div class="row row-divided row-size2">
+        <div class="column medium-2">
+            <p class="footer-hello">Hello from Seattle.</p>
+        </div>
+        <div class="column medium-2">
+            <div id="dropdown-cultures">
+                <select title="Culture" aria-label="Culture" data-dropdown-event="global-footer-dropdownmenu-changed-language" data-dropdown-property="CommonLanguageDropdownValue">
+                    <option value="en-us" selected="selected">English (US)</option>
+                    <option value="cs-cz">Čeština</option>
+                    <option value="da-dk">Dansk</option>
+                    <option value="de-de">Deutsch</option>
+                    <option value="en-au">English (Australia)</option>
+                    <option value="en-ca">English (Canada)</option>
+                    <option value="en-in">English (India)</option>
+                    <option value="en-gb">English (UK)</option>
+                    <option value="es-es">Espa&#241;ol</option>
+                    <option value="es-mx">Espa&#241;ol (MX)</option>
+                    <option value="fr-fr">Fran&#231;ais</option>
+                    <option value="fr-ca">Fran&#231;ais (Canada)</option>
+                    <option value="is-is">&#205;slensku</option>
+                    <option value="th-th">ประเทศไทย</option>
+                    <option value="id-id">Bahasa Indonesia</option>
+                    <option value="it-it">Italiano</option>
+                    <option value="hu-hu">Magyar</option>
+                    <option value="nb-no">Norsk</option>
+                    <option value="nl-nl">Nederlands</option>
+                    <option value="pl-pl">Polski</option>
+                    <option value="pt-br">Portugu&#234;s (Brasil)</option>
+                    <option value="pt-pt">Portugu&#234;s</option>
+                    <option value="sv-se">Svenska</option>
+                    <option value="tr-tr">T&#252;rk&#231;e</option>
+                    <option value="ru-ru">Pусский</option>
+                    <option value="ja-jp">日本語</option>
+                    <option value="ko-kr">한국어</option>
+                    <option value="zh-cn">中文(简体)</option>
+                    <option value="zh-tw">中文(繁體)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="column medium-4">
+            <ul class="linkList linkList-legal en-us">
+                <li class="hidegermanlegal"><a href="https://www.microsoft.com/de-de/rechtliche-hinweise/nutzungsbedingungen">Nutzungsbedingungen</a></li>
+                <li class="hidegermanlegal"><a href="https://www.microsoft.com/de-de/rechtliche-hinweise/impressum">Impressum</a></li>
+
+                <li class="feedback"><a href="https://feedback.azure.com/forums/919477-azure-service-health">Feedback</a></li>
+                <li><a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/">Trademarks</a></li>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkId=248681&clcid=0x409"><span class="privacy-link">Privacy &amp; Cookies</span></a></li>
+            </ul>
+        </div>
+        <div class="column medium-2">
+            <div class="footer-copyright pull-right">
+                <a href="https://www.microsoft.com" aria-label="Microsoft logo" class="logo-microsoft"><svg style="display:none; visibility:hidden;">
+                        <defs><symbol id="svg-microsoft" viewBox="0 0 244.052 47.146">
+                                <path d="M48.019,4.991v43.2h-7.5V14.33H40.4L26.99,48.191H22.02L8.283,14.33h-.09V48.191H1.263V4.991H12.018L24.43,37.015h.18l13.1-32.024Zm6.273,3.284A3.969,3.969,0,0,1,55.6,5.247a4.42,4.42,0,0,1,3.118-1.22,4.359,4.359,0,0,1,3.193,1.25,4.065,4.065,0,0,1,1.266,3,3.909,3.909,0,0,1-1.3,2.982,4.474,4.474,0,0,1-3.164,1.205,4.387,4.387,0,0,1-3.148-1.22A3.944,3.944,0,0,1,54.291,8.275Zm8.043,8.947V48.191h-7.29V17.222ZM84.448,42.889a10.068,10.068,0,0,0,3.584-.753,15.074,15.074,0,0,0,3.615-1.988v6.778a14.6,14.6,0,0,1-3.962,1.506,21.584,21.584,0,0,1-4.865.512A14.733,14.733,0,0,1,67.426,33.58a17.661,17.661,0,0,1,4.369-12.307q4.368-4.835,12.381-4.835a16.926,16.926,0,0,1,4.142.527,13.835,13.835,0,0,1,3.328,1.22v6.989A14.909,14.909,0,0,0,88.2,23.262a9.957,9.957,0,0,0-3.6-.678,9.137,9.137,0,0,0-6.959,2.8,10.548,10.548,0,0,0-2.651,7.561,10.065,10.065,0,0,0,2.546,7.321A9.191,9.191,0,0,0,84.448,42.889ZM112.4,16.71a9.239,9.239,0,0,1,1.567.12,6.544,6.544,0,0,1,1.175.3v7.38a6.363,6.363,0,0,0-1.672-.8,8.282,8.282,0,0,0-2.666-.376,5.659,5.659,0,0,0-4.534,2.259q-1.852,2.259-1.853,6.959V48.191H97.13V17.222h7.291V22.1h.12a8.547,8.547,0,0,1,3.013-3.962A8.173,8.173,0,0,1,112.4,16.71Zm3.136,16.448q0-7.682,4.338-12.171t12.05-4.489q7.26,0,11.343,4.323T147.352,32.5q0,7.532-4.338,11.99T131.2,48.944q-7.2,0-11.432-4.232T115.54,33.158Zm7.592-.241q0,4.851,2.2,7.411a7.843,7.843,0,0,0,6.3,2.56,7.341,7.341,0,0,0,6.055-2.56q2.079-2.561,2.079-7.592,0-5-2.154-7.547a7.48,7.48,0,0,0-6.04-2.545,7.638,7.638,0,0,0-6.221,2.666Q123.131,27.976,123.132,32.917ZM158.2,25.356a3.124,3.124,0,0,0,.994,2.455,17.011,17.011,0,0,0,4.4,2.244,14.908,14.908,0,0,1,6.13,3.932,8.152,8.152,0,0,1,1.762,5.287,8.5,8.5,0,0,1-3.359,7.019q-3.359,2.652-9.083,2.651a21.86,21.86,0,0,1-4.263-.467,18.991,18.991,0,0,1-3.962-1.19v-7.17a17.961,17.961,0,0,0,4.278,2.2,12.533,12.533,0,0,0,4.157.814,7.407,7.407,0,0,0,3.646-.693,2.477,2.477,0,0,0,1.174-2.32,3.221,3.221,0,0,0-1.22-2.546,18.084,18.084,0,0,0-4.625-2.4,14.284,14.284,0,0,1-5.724-3.8,8.314,8.314,0,0,1-1.687-5.363,8.474,8.474,0,0,1,3.329-6.884,13.283,13.283,0,0,1,8.631-2.7,20.89,20.89,0,0,1,3.645.361,16.121,16.121,0,0,1,3.374.934v6.929a15.571,15.571,0,0,0-3.374-1.657,11.257,11.257,0,0,0-3.826-.693,5.577,5.577,0,0,0-3.239.813A2.579,2.579,0,0,0,158.2,25.356Zm16.417,7.8q0-7.682,4.338-12.171T191,16.5q7.26,0,11.343,4.323T206.427,32.5q0,7.532-4.338,11.99t-11.81,4.458q-7.2,0-11.432-4.232T174.614,33.158Zm7.592-.241q0,4.851,2.2,7.411a7.843,7.843,0,0,0,6.3,2.56,7.341,7.341,0,0,0,6.055-2.56q2.079-2.561,2.079-7.592,0-5-2.154-7.547a7.48,7.48,0,0,0-6.04-2.545,7.638,7.638,0,0,0-6.221,2.666Q182.206,27.976,182.206,32.917Zm48.407-9.731H219.755v25h-7.38v-25h-5.182V17.222h5.182V12.914a10.716,10.716,0,0,1,3.178-8A11.146,11.146,0,0,1,223.7,1.8a18.088,18.088,0,0,1,2.35.136,9.322,9.322,0,0,1,1.808.406v6.3a7.546,7.546,0,0,0-1.266-.512,6.581,6.581,0,0,0-2.078-.3,4.4,4.4,0,0,0-3.525,1.431,6.316,6.316,0,0,0-1.235,4.232v3.736h10.858v-6.96l7.321-2.229v9.189h7.381v5.965h-7.381v14.49a6.108,6.108,0,0,0,1.039,4.037,4.148,4.148,0,0,0,3.269,1.175,4.873,4.873,0,0,0,1.522-.3,7.142,7.142,0,0,0,1.552-.723V47.89a8.575,8.575,0,0,1-2.3.723,15.726,15.726,0,0,1-3.178.331q-4.61,0-6.914-2.455t-2.3-7.4Z" transform="translate(-1.263 -1.797)" fill="#fff" />
+                            </symbol>
+                        </defs>
+                    </svg><svg aria-hidden="true" role="presentation">
+                        <use xlink:href="#svg-microsoft"></use>
+                    </svg></a>
+                <span>&copy; 2019 Microsoft</span>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+
+<script type="text/javascript">(function ($, global) {
+        "use strict";
+
+        global.Core = {};
+
+    })(jQuery, window);</script>
+<script type="text/javascript">(function ($, global) {
+        "use strict";
+
+        global.Acom = global.Acom || {};
+
+    })(jQuery, window);
+</script>
+<script type="text/javascript">(function ($, Acom) {
+        "use strict";
+
+        Acom.Util = {};
+
+    })(jQuery, Acom);</script>
+<script type="text/javascript">/* global jQuery */
+
+    /** @requires wacom.js */
+    /**
+     * Interface to the endpoint to render razor files
+     *
+     * @class Acom.Util.Render
+     */
+    Acom.Util.Render = (function ($) { // eslint-disable-line
+
+        'use strict';
+
+        var renderUrlGalleryVideosIndexResults = '/videoapi/index/',
+            renderUrlBlogPostsItemsResults = '/blogapi/',
+            renderUrlVideoThumbnail = '/en-us/videoapi/videothumbnail/',
+            renderUrlSiteSearchResults = '/searchapi/',
+            renderUrlAzureSiteSearchResults = '/azuresearchapi/',
+            renderUrlAzureFridaySearchResults = '/search/azure-friday/',
+            renderUrlStatushistoryResults = '/statushistoryapi/',
+            //renderUrlStatushistoryResults = 'status/HistoryResults/',
+            renderEventsSearchResults = '/community/eventsresults/',
+            renderMyEstimatesResults = '/pricing/calculator/channel/myestimates/list/',
+
+            CaseStudiesApi = '/casestudiesapi/',
+
+            DocTemplatesApi = '/resources/templatesapi/',
+
+            VideoEventApi = '/campaigns/videoevent/searchapi/',
+
+            SamplesApi = '/resources/samples/samplesapi/',
+
+            IoTSolutionsApi = '/develop/iotsolutionsapi/',
+
+            culture = 'en-us',
+
+            /**
+             * Helper for ajax call
+             * @returns the promise
+             */
+
+            renderAjaxGet = function (renderUrl, renderData) {
+                return $.ajax({
+                    url: '/' + culture + renderUrl,
+                    type: 'GET',
+                    dataType: 'html',
+                    data: renderData
+                });
+            },
+
+            renderJson = function (renderUrl, renderData) {
+                return $.ajax({
+                    url: '/' + culture + renderUrl,
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8',
+                    data: JSON.stringify(renderData)
+                });
+            };
+
+        return {
+            GalleryVideosIndexResults: function (service, series, pageNumber, sort, tag, success, error) {
+                $.ajax({
+                    url: '/' + culture + renderUrlGalleryVideosIndexResults,
+                    type: 'GET',
+                    dataType: 'html',
+                    data: {
+                        service: service,
+                        series: series,
+                        pageNumber: pageNumber,
+                        sort: sort,
+                        tag: tag
+                    },
+                    success: success,
+                    error: error
+                });
+            },
+            BlogPostsItemsResults: function (pageNumber, endpointAction, slug, success, error) {
+                var data = {
+                    pageNumber: pageNumber
+                };
+
+                if (slug) {
+                    data.slug = slug;
+                }
+
+                $.ajax({
+                    url: '/' + culture + renderUrlBlogPostsItemsResults + endpointAction + '/',
+                    type: 'GET',
+                    dataType: 'html',
+                    data: data,
+                    success: success,
+                    error: error
+                });
+            },
+            VideoThumbnail: function (videoSlug) {
+                return $.ajax({
+                    url: renderUrlVideoThumbnail,
+                    type: 'GET',
+                    data: {
+                        VideoSlug: videoSlug
+                    },
+                    dataType: 'html'
+                });
+            },
+            SiteSearchResults: function (searchTerm, pageNumber, isAzure, isMsdn, isForums, success, error) {
+                $.ajax({
+                    url: '/' + culture + renderUrlSiteSearchResults,
+                    type: 'GET',
+                    dataType: 'html',
+                    data: {
+                        query: searchTerm,
+                        page: pageNumber,
+                        azure: isAzure,
+                        msdn: isMsdn,
+                        forums: isForums
+                    },
+                    success: success,
+                    error: error
+                });
+            },
+            AzureSiteSearchResults: function (searchTerm, pageNumber, isAzure, isMsdn, isForums, success, error) {
+                $.ajax({
+                    url: '/' + culture + renderUrlAzureSiteSearchResults,
+                    type: 'GET',
+                    dataType: 'html',
+                    data: {
+                        query: searchTerm,
+                        page: pageNumber,
+                        azure: isAzure,
+                        msdn: isMsdn,
+                        forums: isForums
+                    },
+                    success: success,
+                    error: error
+                });
+            },
+            AzureFridaySearchResults: function (searchTerm, services, pageNumber) {
+                return renderJson(renderUrlAzureFridaySearchResults + '?query=' + encodeURIComponent(searchTerm) + '&page=' + pageNumber,
+                    {
+                        services: services
+                    });
+            },
+            StatusHistoryResults: function (service, region, startDate, pageNumber, success, error) {
+                $.ajax({
+                    url: '/' + culture + renderUrlStatushistoryResults,
+                    type: 'GET',
+                    dataType: 'html',
+                    data: {
+                        serviceSlug: service,
+                        regionSlug: region,
+                        startDate: startDate,
+                        page: pageNumber
+                    },
+                    success: success,
+                    error: error
+                });
+            },
+
+            Events: function (type, country, service, showAllLanguages, pageNumber) {
+                var data = {
+                    eventType: type,
+                    country: country,
+                    service: service,
+                    showAllLanguages: showAllLanguages,
+                    page: pageNumber
+                };
+                return renderAjaxGet(renderEventsSearchResults, data);
+            },
+
+            CaseStudies: function (options) {
+                return renderAjaxGet(CaseStudiesApi, options);
+            },
+
+            DocTemplates: function (options) {
+                return renderAjaxGet(DocTemplatesApi, options);
+            },
+
+            Samples: function (term, sortType, service, platform, pageNumber, showPrivate) {
+                var data = {
+                    term: term, sortType: sortType, service: service, platform: platform, pageNumber: pageNumber
+                };
+                if (showPrivate) { return renderAjaxGet(SamplesApi + 'private/', data); }
+                return renderAjaxGet(SamplesApi, data);
+            },
+
+            VideoEvent: function (series, term, tag, pageNumber) {
+                var data = {
+                    series: series, term: term, tag: tag, pageNumber: pageNumber
+                };
+                return renderAjaxGet(VideoEventApi, data);
+            },
+
+            IoTSolutions: function (device, platform, language) {
+                var data = { device: device, platform: platform, language: language };
+                return renderAjaxGet(IoTSolutionsApi, data);
+            },
+
+            MyEstimates: function () {
+                var data = {};
+                return renderAjaxGet(renderMyEstimatesResults, data);
+            }
+        };
+    })(jQuery);
+</script>
+<script type="text/javascript">(function ($, Core) {
+        "use strict";
+
+        /**
+         * Utility functions used throughout the site for common tasks.
+         *
+         * @class Core.Util
+         */
+        Core.Util = (function () {
+
+            window.isLocalStorageAvailable = undefined;
+
+            return {
+
+                /**
+                 * Encodes html attribute string.
+                 *
+                 * @param value The string to encode.
+                 * @return The encoded string.
+                 */
+                EncodeAttribute: function (value) {
+                    return Core.Util.EncodeHtml(value).replace(/"/g, "&quot;").replace(/'/g, "&apos;").replace(/`/g, "&#96;");
+                },
+                /**
+                 * Encodes html string.
+                 *
+                 * @param value The string to encode.
+                 * @return The encoded string.
+                 */
+                EncodeHtml: function (value) {
+                    if (!value) {
+                        return "";
+                    }
+                    return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                },
+
+                /**
+                 * Encodes string elements.
+                 * https://github.com/janl/mustache.js/blob/master/mustache.js#L53
+                 *
+                 * @param string Value to be encoded.
+                 */
+                EscapeHtml: function (string) {
+                    var escapeMap = {
+                        "&": "&amp;",
+                        "<": "&lt;",
+                        ">": "&gt;",
+                        '"': "&quot;",
+                        "'": "&#39;",
+                        "/": "&#x2F;"
+                    };
+
+                    return string.replace(/[&<>"'\/]/g, function (element) {
+                        return escapeMap[element];
+                    });
+                },
+
+                /**
+                 * Sanitizes a string by making lower-cased and trimmed.
+                 *
+                 * @param string Value to be sanitized.
+                 */
+                SanitizeString: function (string) {
+                    return $.trim(string).toLowerCase();
+                },
+
+                /**
+                 * Appends to the URL, adding to the history if available,
+                 * otherwise refreshing the page.
+                 *
+                 * @param url Updated url.
+                 */
+                SoftLoadUrl: function (state, title, url) {
+                    var current = window.location.href.split(window.location.host)[1];
+
+                    if (current !== url) {
+                        if (window.history && window.history.pushState) {
+                            window.history.pushState(state, title, url);
+                            return true;
+                        } else {
+                            window.location = url;
+                            return false;
+                        }
+                    }
+                },
+
+                /**
+                 * Accepts pairs key value pairs of query string params
+                 * Soft loads them using SoftLoadUrl
+                 *
+                 * @param kvPairs pairs of query string params
+                 */
+                SoftLoadQueryStringPairs: function (kvPairs) {
+                    var qs = Core.Util.GetQueryStringFromPairs(kvPairs);
+                    if (qs !== window.location.search) {
+                        return Core.Util.SoftLoadUrl(null, null, location.href.split("?")[0] + qs);
+                    } else {
+                        return true;
+                    }
+                },
+
+                /**
+                 * Updates a given query string with a given name and value
+                 *
+                 * @param qs The whole querystring
+                 * @param name the name of the query string parameter
+                 * @param value the value of the query string parameter
+                 */
+                UpdateQueryString: function (qs, name, value) {
+                    if (value && value !== null) {
+                        value = value.toString();
+                        var match = RegExp("[?&]" + name + "=([^&]*)", 'gi').exec(qs);
+                        if (match !== null) {
+                            return qs.replace(new RegExp("([?&]" + name + "=)([^&]*)", 'gi'), "$1" + value.replace(/ /g, "+"));
+                        } else {
+                            var param = (qs.length > 0 ? "&" : "?");
+                            param += name + "=" + value.replace(/ /g, "+");
+                            return qs + param;
+                        }
+                    } else {
+                        /* remove parameter if value null */
+                        qs = qs.replace(new RegExp("([?&]" + name + "=)([^&]*)"), "");
+                        if (qs[0] === "&") {
+                            qs = "?" + qs.slice(1);
+                        }
+
+                        return qs;
+                    }
+                },
+
+                /**
+                 * Extracts a value of a query string pair from the name
+                 *
+                 * @param name the key of the query string pair
+                 */
+                GetParameterByName: function (name) {
+                    var match = RegExp("[?&]" + name + "=([^&]*)").exec(window.location.search);
+                    return match && decodeURIComponent(match[1].replace(/\+/g, " "));
+                },
+
+                /**
+                 * Extracts a query string from given pairs and the current query string
+                 *
+                 * @param kvPairs The set of query string pairs
+                 */
+                GetQueryStringFromPairs: function (kvPairs) {
+                    var qs = location.search;
+                    $.each(kvPairs, function (k, v) {
+                        qs = Core.Util.UpdateQueryString(qs, k, v);
+                    });
+
+                    return qs;
+                },
+
+                /**
+                 * Sets a cookie
+                 *
+                 * @param key The cookie key
+                 * @param value The cookie value
+                 * @param expire The cookie expiration date
+                 */
+                SetCookie: function (key, value, expire) {
+                    var expiresDefault = 365;
+
+                    if (!expire || typeof expire !== "number") {
+                        expire = expiresDefault;
+                    }
+
+                    if (key && value) {
+                        $.cookie(key, value, { expires: expire, path: "/" });
+                        return true;
+                    } else {
+                        return false;
+                    }
+                },
+
+                /**
+                 * Gets a cookie
+                 *
+                 * @param key The cookie key
+                 */
+                GetCookie: function (key) {
+                    return $.cookie(key);
+                },
+
+                /**
+                 * Sets a key value pair in localStorage
+                 *
+                 * @param key The stored key
+                 * @param value The stored value
+                 */
+                SetStorage: function (key, value) {
+                    if (window.localStorage && Core.Util.CheckLocalStorageavailability()) {
+                        try {
+                            localStorage.setItem(key, value);
+                        } catch (err) {
+                            Core.Util.TrackException('Error to set value to local storage, key is "' + key + '", value is :"' + value + '", err is : ' + JSON.stringify(err) + '.');
+                        }
+                    }
+                },
+                /**
+                 * Checking if local storage can set value.
+                 * Should help to catch issue with Safari private mode.
+                 */
+                CheckLocalStorageavailability: function () {
+                    if (!window.localStorage) {
+                        window.isLocalStorageAvailable = false;
+                    } else if (typeof window.isLocalStorageAvailable === 'undefined') {
+                        try {
+                            localStorage.setItem('azure-test', 'test');
+
+                            localStorage.removeItem('azure-test');
+
+                            window.isLocalStorageAvailable = true;
+                        } catch (err) {
+                            window.isLocalStorageAvailable = false;
+                        }
+                    }
+
+                    return window.isLocalStorageAvailable;
+                },
+
+                /**
+                 * Gets a value from localStorage
+                 *
+                 * @param key The stored key
+                 */
+                GetStorage: function (key) {
+                    var result = null;
+                    if (window.localStorage && Core.Util.CheckLocalStorageavailability()) {
+                        var result = null;
+                        try {
+                            result = localStorage.getItem(key);
+                            return result;
+                        } catch (err) {
+                            Core.Util.TrackException('Error to get value by key from local storage, key is "' + key + '", err is : ' + JSON.stringify(err) + '.');
+                        }
+                    }
+
+                    return result;
+                },
+
+                /**
+                 * Removes a key from localStorage
+                 *
+                 * @param key The stored key
+                 */
+                RemoveStorage: function (key) {
+                    if (window.localStorage && Core.Util.CheckLocalStorageavailability()) {
+                        try {
+                            localStorage.removeItem(key);
+
+                            return true;
+                        } catch (ex) {
+                            Core.Util.TrackException('Error to remove key from local storage, key is "' + key + '", err is : ' + JSON.stringify(err) + '.');
+                            return false;
+                        }
+                    }
+                },
+
+                /**
+                 * Convert a string to lowercase, and replace non-slug characters with dashes
+                 */
+                Sluggify: function (string) {
+                    return string.replace(/[,. :]/g, '-').toLowerCase();
+                },
+
+                /**
+                 * Format a string replacing placeholders such as {0}, {1}, etc. by the provided values
+                 */
+                FormatString: function () {
+                    var s = arguments[0];
+                    for (var i = 0; i < arguments.length - 1; i++) {
+                        var reg = new RegExp("\\{" + i + "\\}", "gm");
+                        s = s.replace(reg, arguments[i + 1]);
+                    }
+
+                    return s;
+                },
+
+                /**
+                 * Track exception using Application Insight
+                 */
+
+                TrackException: function (msg) {
+                    if (window.appInsights) { // eslint-disable-line
+                        var schemaError = new Error(msg);
+
+                        window.appInsights.trackException(schemaError);
+                    }
+                }
+            };
+        })();
+
+    })(jQuery, Core);
+</script>
+<script type="text/javascript">/* global jQuery, Acom */
+
+    (function ($, global, Core) {
+        var $body = $('body'),
+            $zoneTabs = $('.zone'),
+            $zonetabsa = $('.zone a'),
+            $azureHeader = $('#azure-header'),
+            zoneQueryString = "", //qs2object(global.location.search).zone,
+            $refreshDropdown = $('#refresh'),
+            pagination = $('[data-control="pagination"]'),
+            paginationPageSize = 10,
+            $historyErrorMessage = $('#history-error-message'),
+            historyPageNumber = 1,
+            historyRegion = 'all',
+            historyService = 'all',
+            historyDate = 'recent',
+            historyContainer = $('#history-results-container'),
+            dropdownHistoryRegion = $('#wa-dropdown-history-region'),
+            dropdownHistoryService = $('#wa-dropdown-service'),
+            dropdownHistoryDate = $('#wa-dropdown-date'),
+            MENU_RESIZE_EVENT = 'menuResize',
+            timer,
+            statusRegionItem = Core.Util.GetStorage('status-region'),
+            statusRefreshItem = Core.Util.GetStorage('statusRefresh');
+
+        if (global.location.hash === '#history') {
+            global.location = global.location.pathname + 'history/'; // eslint-disable-line no-param-reassign
+        }
+
+        function changeRefresh(time) {
+            Core.Util.SetStorage('statusRefresh', time);
+
+            if ($refreshDropdown.length > 0) {
+                window.clearTimeout(timer);
+                timer = window.setTimeout(function () {
+                    window.location = window.location;
+                }, time);
+            }
+        }
+
+        function updateZone(zone) {
+            var currentZone = zone || 'americas';
+
+            Core.Util.SetStorage('status-region', currentZone);
+
+            // hide and show appropriate tables
+            $('.status-table').css('display', 'none').removeClass('active');
+            $('.status-table[data-zone-name="' + currentZone + '"]').addClass('active').not('.fixed-status-header').css('display', 'table');
+
+
+            // update the active tab
+            $zoneTabs.removeClass('active');
+            $zonetabsa.attr('aria-selected', 'false');
+            $('.zone[data-zone-name="' + currentZone + '"]').addClass('active');
+            $('.zone[data-zone-name="' + currentZone + '"] a').attr('aria-selected', 'true');
+        }
+
+        // check for filtered results based on query string or local storage else default to first zone
+        if (zoneQueryString) {
+            updateZone(zoneQueryString);
+        } else if (statusRegionItem) {
+            updateZone(statusRegionItem);
+        } else {
+            updateZone($zoneTabs.first().data('zone-name'));
+        }
+
+        // event listeners
+        $body.on('click', '.zone', function (e) {
+            updateZone($(this).data('zone-name'));
+            e.preventDefault();
+        });
+
+        $body.on(MENU_RESIZE_EVENT, function () {
+            var $activeHeader = $('.fixed-status-header.active');
+
+            if ($azureHeader.hasClass('collapsed')) {
+                $activeHeader.css('top', '42px');
+            } else {
+                $activeHeader.css('top', '84px');
+            }
+        });
+
+        // if there are zones with issues, show the first tab with impacted regions and services
+        if ($('.zone.impacted').length > 0) {
+            $('.zone.impacted').eq(0).trigger('click');
+        }
+
+        // get and set page refresh time in local storage and dropdown,
+        if (statusRefreshItem && typeof statusRefreshItem === 'number' && !isNaN(statusRefreshItem)) { // eslint-disable-line
+            $refreshDropdown.find('option[value="' + statusRefreshItem + '"]').attr('selected', 'selected');
+            changeRefresh(statusRefreshItem);
+        } else {
+            changeRefresh($refreshDropdown.val());
+        }
+
+        $refreshDropdown.on('change', function () {
+            changeRefresh($(this).find('option:selected').val());
+        });
+
+
+        // fixed table header global.sd.breakpoints.LARGE = 960
+        function fixTableHeader() {
+            var $activeHeader = $('.fixed-status-header.active');
+
+            if ($('.region-status-table:visible').length > 0) {
+                if ($(global).scrollTop() > $('.region-status-table:visible .status-table-head').offset().top - $azureHeader.height()) {
+                    if ($(global).width() > 960) {
+                        $activeHeader.css('display', 'table');
+                    }
+                } else {
+                    $activeHeader.css('display', 'none');
+                }
+            }
+        }
+
+        $(global).on('scroll', fixTableHeader);
+        $(global).trigger('resize');
+
+        // get it started!
+        updateZone($('.zone.active').data('zone-name'));
+
+        function renderHistoryResultsError() {
+            historyContainer.html('');
+            $historyErrorMessage.attr('aria-hidden', false).removeClass('hide');
+        }
+
+        /** Results success callback */
+        function renderHistoryResultsSuccess(data) {
+            if (data && data.length > 0) {
+                historyContainer.html(data);
+                $historyErrorMessage.attr('aria-hidden', true).addClass('hide');
+                paginate(); // eslint-disable-line no-use-before-define
+            } else {
+                renderHistoryResultsError();
+            }
+
+            if (historyDate === 'recent') {
+                pagination.hide();
+            } else {
+                pagination.show();
+            }
+        }
+
+        /** Ajax call to get fresh results */
+        function renderHistoryResults() {
+            historyContainer.html('').html('<div class="wa-loader"></div>');
+            Acom.Util.Render.StatusHistoryResults(historyService, historyRegion, historyDate, historyPageNumber, renderHistoryResultsSuccess, renderHistoryResultsError);
+        }
+
+        // history page functionality
+        function updatePage(e, page) {
+            historyPageNumber = page;
+            renderHistoryResults();
+        }
+
+        function paginate() {
+            pagination.off('paged.pagination');
+            pagination.data({ items: $('.wa-historyResult-count').val(), pagesize: paginationPageSize }).trigger('page.pagination', historyPageNumber);
+            pagination.on('paged.pagination', updatePage);
+        }
+
+        /** Results error callback */
+
+        /** Updates the region selection for history filtering */
+        function changeHistoryRegion() {
+            historyRegion = this.value;
+            historyPageNumber = 1;
+            renderHistoryResults();
+        }
+
+        /** Updates the service selection for history filtering */
+        function changeHistoryService() {
+            historyService = this.value;
+            historyPageNumber = 1;
+            renderHistoryResults();
+        }
+
+        /** Updates the service selection for history filtering */
+        function changeHistoryDate() {
+            historyDate = this.value;
+            historyPageNumber = 1;
+            renderHistoryResults();
+        }
+
+        // History Tab
+        dropdownHistoryRegion.on('change', changeHistoryRegion);
+        dropdownHistoryService.on('change', changeHistoryService);
+        dropdownHistoryDate.on('change', changeHistoryDate);
+    })(jQuery, window, window.Core);
+</script>
+
+
+
+</body>
+</html>
+
