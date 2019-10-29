@@ -29,7 +29,6 @@ func TestHealthy(t *testing.T) {
 	conf := Config{
 		Report:   "all",
 		Platform: "google",
-		InfluxDb: "",
 	}
 
 	status := ScrapeStatus(conf, api)
@@ -62,7 +61,6 @@ func TestUnHealthy(t *testing.T) {
 	conf := Config{
 		Report:   "all",
 		Platform: "google",
-		InfluxDb: "",
 	}
 
 	status := ScrapeStatus(conf, api)

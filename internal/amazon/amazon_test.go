@@ -5,10 +5,13 @@ import (
 	"github.com/BouncyLlama/raindrops/internal/test"
 	. "github.com/BouncyLlama/raindrops/internal/types"
 	"github.com/stretchr/testify/assert"
+	"io"
 	"io/ioutil"
 	"net/http"
 	"strconv"
+	"strings"
 	"testing"
+	"time"
 )
 
 // RoundTripFunc .
@@ -31,7 +34,6 @@ func TestHealthyAmazon(t *testing.T) {
 	conf := Config{
 		Report:   "all",
 		Platform: "amazon",
-		InfluxDb: "",
 	}
 
 	status := ScrapeStatus(conf, api)
@@ -64,7 +66,6 @@ func TestUnHealthyAmazon(t *testing.T) {
 	conf := Config{
 		Report:   "all",
 		Platform: "amazon",
-		InfluxDb: "",
 	}
 
 	status := ScrapeStatus(conf, api)
@@ -79,5 +80,47 @@ func TestUnHealthyAmazon(t *testing.T) {
 		assert.Equal(t, "amazon", item.Platform, `index `+strconv.Itoa(idx)+` had platform `+item.Platform)
 
 	}
+
+}
+func TestIncidents(t *testing.T) {
+
+	dat, _ := ioutil.ReadFile("../testdata/amazon_incidents.html")
+	dat2, _ := ioutil.ReadFile("../testdata/amazon_incident.html")
+
+	client := test.NewTestClient(func(req *http.Request) *http.Response {
+		var body io.ReadCloser
+		if strings.Contains(req.URL.String(), "message") {
+			body = ioutil.NopCloser(bytes.NewBuffer(dat2))
+		} else {
+			body = ioutil.NopCloser(bytes.NewBuffer(dat))
+
+		}
+
+		// Test request parameters
+		return &http.Response{
+			StatusCode: 200,
+			// Send response to be tested
+			Body: body,
+			// Must be set to non-nil value or it panics
+			Header: make(http.Header),
+		}
+	})
+
+	api := HttpClient{client, "http://example.com"}
+	conf := Config{
+		Report:   "all",
+		Platform: "amazon",
+	}
+
+	incidents := ScrapeIncidents(conf, api)
+	if incidents == nil || len(incidents) == 0 {
+		assert.Fail(t, "Should have returned results")
+	}
+	time, _ := time.Parse("January _2, 2006 at 3:04pm (MST)", "June 13, 2014"+" at 12:00am (UTC)")
+
+	assert.Equal(t, 12, len(incidents), "Should have 33 records")
+	assert.Equal(t, time, incidents[5].Time)
+	assert.Equal(t, "Summary of the Amazon SimpleDB Service Disruption", incidents[5].Description)
+	assert.Equal(t, "65649", incidents[5].Identifier)
 
 }

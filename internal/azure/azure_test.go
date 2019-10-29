@@ -31,7 +31,6 @@ func TestHealthyAzure(t *testing.T) {
 	conf := Config{
 		Report:   "all",
 		Platform: "azure",
-		InfluxDb: "",
 	}
 
 	status := ScrapeStatus(conf, api)
@@ -64,7 +63,6 @@ func TestUnHealthyAzure(t *testing.T) {
 	conf := Config{
 		Report:   "all",
 		Platform: "azure",
-		InfluxDb: "",
 	}
 
 	status := ScrapeStatus(conf, api)

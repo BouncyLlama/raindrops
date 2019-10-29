@@ -5,6 +5,7 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"log"
 	"strings"
+	"time"
 )
 
 func ScrapeStatus(conf Config, client HttpClient) []ServiceStatus {
@@ -49,6 +50,7 @@ func ScrapeStatus(conf Config, client HttpClient) []ServiceStatus {
 					Platform: Amazon,
 					Service:  text,
 					Status:   status,
+					Time:     time.Now(),
 				})
 			}
 			if status == "OK" && conf.Report != Down {
@@ -56,6 +58,7 @@ func ScrapeStatus(conf Config, client HttpClient) []ServiceStatus {
 					Platform: Amazon,
 					Service:  text,
 					Status:   status,
+					Time:     time.Now(),
 				})
 			}
 
