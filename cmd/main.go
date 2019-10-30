@@ -19,7 +19,7 @@ import (
 )
 
 func main() {
-	parser := argparse.NewParser("monitor", "monitors cloud host status")
+	parser := argparse.NewParser("raindrops", "monitors cloud host status")
 	scrapeStatusCommand := parser.NewCommand("status", "scrape current statii")
 	scrapeIncidentCommand := parser.NewCommand("incidents", "scrape incident descriptions")
 	report := scrapeStatusCommand.Selector("r", "report", []string{types.Down, types.Up, types.All}, &argparse.Options{Required: true, Help: "report if services are types.Down, types.Up, or types.All. For the Google platform, we only retrieve if the service is types.Down."})
@@ -121,6 +121,14 @@ func main() {
 				BaseUrl: "https://status.azure.com/en-us/status/history/",
 			}
 			incidents = append(incidents, azure.ScrapeIncidents(conf, httpClient)...)
+
+		}
+		if conf.Platform == types.Google || conf.Platform == types.All {
+			httpClient := types.HttpClient{
+				Client:  &http.Client{},
+				BaseUrl: "https://status.cloud.google.com/summary",
+			}
+			incidents = append(incidents, google.ScrapeIncidents(conf, httpClient)...)
 
 		}
 		for _, item := range incidents {

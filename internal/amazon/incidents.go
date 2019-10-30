@@ -49,6 +49,8 @@ func ScrapeIncidents(conf Config, client HttpClient) []Incident {
 		client.BaseUrl = "https://aws.amazon.com/message/" + identifierStr
 		incident.Text = getIncident(client)
 		incident.Platform = Amazon
+		//these are all post-incident analyses
+		incident.Resolved = true
 		incidents = append(incidents, incident)
 	})
 
