@@ -2,7 +2,15 @@
 
 Tool scrapes the status pages of AWS, Azure, GCP and reports the status of
 each service. It always reports in text format to stdout and can also dump to Mongo.
+## Prerequisites
+### Dump to console
+None
 
+### Dump to Mongo
+* Mongodb server
+* Database created
+* User with read/write access to the database
+    * User must be created and auth'd in this database 
 ## Usage - status command
 ```bash
 usage: raindrops status -r|--report (down|up|all) [-h|--help] -c|--cloud
