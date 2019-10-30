@@ -1,46 +1,55 @@
 # Cloud Monitor
 
 Tool scrapes the status pages of AWS, Azure, GCP and reports the status of
-each service. It always reports in text format to stdout and will dump to
-influxdb if the 'influx' subcommand is used.
+each service. It always reports in text format to stdout and can also dump to Mongo.
+## Prerequisites
+### Dump to console
+None
 
-## Usage
+### Dump to Mongo
+* Mongodb server
+* Database created
+* User with read/write access to the database
+    * User must be created and auth'd in this database 
+## Usage - status command
 ```bash
-usage: monitor <Command> [-h|--help] -r|--report (down|up|all) -c|--cloud
-               (google|amazon|azure|all)
+usage: raindrops status -r|--report (down|up|all) [-h|--help] -c|--cloud
+                 (google|amazon|azure|all) [-m|--mongo-url "<value>"]
+                 [-u|--username "<value>"] [-p|--password "<value>"]
+                 [-d|--mongo-dbname "<value>"]
 
-               monitors cloud host status
-
-Commands:
-
-  influx  Dump statii to influxdb
+                 scrape current statii
 
 Arguments:
 
-  -h  --help    Print help information
-  -r  --report  report if services are down, up, or all. For the Google
-                platform, we only retrieve if the service is down.
-  -c  --cloud   which platforms to report on
+  -r  --report        report if services are types.Down, types.Up, or
+                      types.All. For the Google platform, we only retrieve if
+                      the service is types.Down.
+  -h  --help          Print help information
+  -c  --cloud         which platforms to report on
+  -m  --mongo-url     The url to mongo
+  -u  --username      mongo username
+  -p  --password      mongo password
+  -d  --mongo-dbname  db name to use
+
 
 ```
 
-### Influx subcommand
+### Usage - incidents command
 ```bash
-usage: monitor influx -i|--influx-url "<value>" -u|--username "<value>"
-               -p|--pasword "<value>" -d|--influxdb "<value>" [-h|--help]
-               -r|--report (down|up|all) -c|--cloud (google|amazon|azure|all)
+usage: raindrops incidents [-h|--help] -c|--cloud (google|amazon|azure|all)
+                 [-m|--mongo-url "<value>"] [-u|--username "<value>"]
+                 [-p|--password "<value>"] [-d|--mongo-dbname "<value>"]
 
-               Dump statii to influxdb
+                 scrape incident descriptions
 
 Arguments:
 
-  -i  --influx-url  The url to influxdb
-  -u  --username    influxdb username
-  -p  --pasword     influxdb password
-  -d  --influxdb    db name to use
-  -h  --help        Print help information
-  -r  --report      report if services are down, up, or all. For the Google
-                    platform, we only retrieve if the service is down.
-  -c  --cloud       which platforms to report on
+  -h  --help          Print help information
+  -c  --cloud         which platforms to report on
+  -m  --mongo-url     The url to mongo
+  -u  --username      mongo username
+  -p  --password      mongo password
+  -d  --mongo-dbname  db name to use
 
 ```
