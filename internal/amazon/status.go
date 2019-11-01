@@ -45,11 +45,21 @@ func ScrapeStatus(conf Config, client HttpClient) []ServiceStatus {
 			} else {
 				status = "Info"
 			}
+			var region *string = nil
+			regionSplit := strings.Split(text, "(")
+			if len(regionSplit) == 2 {
+				regionStr := regionSplit[1]
+				regionStr = strings.ReplaceAll(regionStr, ")", "")
+				regionStr = strings.TrimSpace(regionStr)
+				region = &regionStr
+			}
+
 			if status != "OK" && conf.Report != Up {
 				serviceStatus = append(serviceStatus, ServiceStatus{
 					Platform: Amazon,
 					Service:  text,
 					Status:   status,
+					Region:   region,
 					Time:     time.Now(),
 				})
 			}
@@ -58,6 +68,7 @@ func ScrapeStatus(conf Config, client HttpClient) []ServiceStatus {
 					Platform: Amazon,
 					Service:  text,
 					Status:   status,
+					Region:   region,
 					Time:     time.Now(),
 				})
 			}
