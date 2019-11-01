@@ -19,6 +19,7 @@ type HttpClient struct {
 type ServiceStatus struct {
 	Platform string `-`
 	Service  string `-`
+	Region   *string
 	Status   string
 	Time     time.Time
 }
