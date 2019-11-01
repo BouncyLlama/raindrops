@@ -20,7 +20,16 @@ jobs:
     working_directory: /go/src/github.com/BouncyLlama/raindrops
     steps:
       - checkout
+      - run:
+          name: "artifact directory"
+          command: |
+            mkdir -p /tmp/artifacts/raindrops
 
-      # specify any bash command here prefixed with `run: `
-      - run: go get -v -t -d ./...
-      - run: go test -v ./...
+      - run: go mod download
+      - run: go build ./cmd
+      - run: gotestsum --junitfile /tmp/artifacts/raindrops/unit-tests.xml -- -coverprofile=c.out ./...
+      - run: go tool cover -html=c.out -o /tmp/artifacts/coverage.html
+      - store_artifacts:
+          path: /tmp/artifacts
+      - store_test_results:
+          path: /tmp/artifacts/
