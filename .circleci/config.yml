@@ -26,7 +26,7 @@ jobs:
             mkdir -p /tmp/artifacts/raindrops
 
       - run: go mod download
-      - run: go build ./cmd
+      - run: go build -o raindrops ./cmd
       - run: gotestsum --junitfile /tmp/artifacts/raindrops/unit-tests.xml -- -coverprofile=c.out ./...
       - run: go tool cover -html=c.out -o /tmp/artifacts/coverage.html
       - store_artifacts:
