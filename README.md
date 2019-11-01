@@ -1,4 +1,5 @@
-# Cloud Monitor
+# Cloud Monitor 
+[![CircleCI](https://circleci.com/gh/BouncyLlama/raindrops/tree/master.svg?style=svg)](https://circleci.com/gh/BouncyLlama/raindrops/tree/master)
 
 Tool scrapes the status pages of AWS, Azure, GCP and reports the status of
 each service. It always reports in text format to stdout and can also dump to Mongo.
