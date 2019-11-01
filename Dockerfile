@@ -1,4 +1,4 @@
-FROM golang:1.13-alpine
+FROM golang:1.13-alpine as builder
 RUN apk add git
 RUN mkdir /raindrops
 WORKDIR /raindrops
@@ -7,8 +7,13 @@ COPY go.sum .
 ENV GO111MODULE=on
 RUN go mod download
 COPY . ./
-RUN rm -rf ./testdata &&  find ./ |grep ".*_test.go" |xargs rm
-RUN go build -o raindrops ./cmd  && mv raindrops /bin/raindrops
-RUN chmod +x docker-entrypoint.sh && mv docker-entrypoint.sh /bin/ && rm -rf ./*
+RUN go build -o raindrops ./cmd
+
+FROM alpine:latest
+WORKDIR /bin/
+COPY docker-entrypoint.sh /bin/docker-entrypoint.sh
+RUN chmod +x docker-entrypoint.sh
+COPY --from=builder /raindrops/raindrops /bin/raindrops
+
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["raindrops"]
